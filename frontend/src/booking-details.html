@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Details - Book with Dr. Sarah Chen - SkillBridge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <button class="mr-4 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h1 class="text-xl font-bold text-gray-900">SkillBridge</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-3">
+                        <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1708195886023-3ecb00ac7a49" alt="Profile">
+                        <span class="text-sm font-medium text-gray-700">Jessica Martinez</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Progress Steps -->
+        <div class="mb-8">
+            <div class="flex items-center justify-center space-x-4">
+                <div class="flex items-center">
+                    <div class="bg-green-600 text-white rounded-full h-8 w-8 flex items-center justify-center text-sm font-medium">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span class="ml-2 text-sm font-medium text-green-600">Select Time</span>
+                </div>
+                <div class="h-0.5 w-16 bg-green-600"></div>
+                <div class="flex items-center">
+                    <div class="bg-blue-600 text-white rounded-full h-8 w-8 flex items-center justify-center text-sm font-medium">2</div>
+                    <span class="ml-2 text-sm font-medium text-blue-600">Session Details</span>
+                </div>
+                <div class="h-0.5 w-16 bg-gray-300"></div>
+                <div class="flex items-center">
+                    <div class="bg-gray-300 text-gray-500 rounded-full h-8 w-8 flex items-center justify-center text-sm font-medium">3</div>
+                    <span class="ml-2 text-sm text-gray-500">Payment</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-2">
+                <!-- Session Information -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <img class="h-16 w-16 rounded-full" src="https://images.unsplash.com/photo-1560250097-0b93528c311a" alt="Dr. Sarah Chen">
+                        <div>
+                            <h2 class="text-xl font-semibold text-gray-900">Dr. Sarah Chen</h2>
+                            <p class="text-gray-600">Senior React Developer & Tech Lead</p>
+                            <div class="flex items-center mt-1">
+                                <div class="flex text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-sm text-gray-500 ml-2">4.9 (47 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 rounded-lg p-4 mb-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-blue-100 p-2 rounded-lg">
+                                <i class="fas fa-calendar text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-900">June 18, 2025 • 2:00 PM - 3:00 PM PST</p>
+                                <p class="text-sm text-gray-600">60-minute video session</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Session Details Form -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-6">Tell us about your goals</h3>
+                    
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">What would you like to focus on in this session? *</label>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                    <input type="radio" name="focus" value="react-basics" class="text-blue-600">
+                                    <span class="ml-3 text-sm">React Fundamentals</span>
+                                </label>
+                                <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                    <input type="radio" name="focus" value="advanced-react" class="text-blue-600" checked>
+                                    <span class="ml-3 text-sm">Advanced React Patterns</span>
+                                </label>
+                                <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                    <input type="radio" name="focus" value="project-review" class="text-blue-600">
+                                    <span class="ml-3 text-sm">Project Code Review</span>
+                                </label>
+                                <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                    <input type="radio" name="focus" value="career-advice" class="text-blue-600">
+                                    <span class="ml-3 text-sm">Career Guidance</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Your current experience level *</label>
+                            <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option>Complete Beginner</option>
+                                <option selected>Some Experience (1-2 years)</option>
+                                <option>Intermediate (2-5 years)</option>
+                                <option>Advanced (5+ years)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Describe your specific goals or questions *</label>
+                            <textarea 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                rows="4" 
+                                placeholder="I'm working on a React project and struggling with useEffect cleanup and performance optimization. I'd like to review my code and learn best practices for managing component lifecycle..."
+                            ></textarea>
+                            <p class="text-xs text-gray-500 mt-1">Be specific about what you'd like to accomplish. This helps your mentor prepare better.</p>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Any relevant links or files?</label>
+                            <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                                <i class="fas fa-cloud-upload-alt text-gray-400 text-2xl mb-2"></i>
+                                <p class="text-sm text-gray-600 mb-2">Upload project files, GitHub repo, or portfolio links</p>
+                                <button type="button" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm">
+                                    Choose Files
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Preferred communication style</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="text-blue-600" checked>
+                                    <span class="ml-2 text-sm text-gray-700">Hands-on coding together</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="text-blue-600">
+                                    <span class="ml-2 text-sm text-gray-700">Code review and feedback</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="text-blue-600">
+                                    <span class="ml-2 text-sm text-gray-700">Conceptual discussion</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="text-blue-600">
+                                    <span class="ml-2 text-sm text-gray-700">Q&A session</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-lightbulb text-yellow-600 mt-0.5 mr-3"></i>
+                                <div>
+                                    <h4 class="text-sm font-medium text-yellow-800">Pro Tip</h4>
+                                    <p class="text-sm text-yellow-700 mt-1">The more specific you are about your goals, the better your mentor can prepare and help you achieve them in the session.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Session Policies -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Session Policies</h3>
+                    <div class="space-y-4 text-sm text-gray-600">
+                        <div class="flex items-start">
+                            <i class="fas fa-shield-alt text-green-600 mt-0.5 mr-3"></i>
+                            <div>
+                                <p class="font-medium text-gray-900">Professional Conduct</p>
+                                <p>All sessions are conducted professionally with mutual respect expected from both parties.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-blue-600 mt-0.5 mr-3"></i>
+                            <div>
+                                <p class="font-medium text-gray-900">Punctuality</p>
+                                <p>Please join the session on time. Late arrivals may result in shortened session duration.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-redo text-purple-600 mt-0.5 mr-3"></i>
+                            <div>
+                                <p class="font-medium text-gray-900">Rescheduling</p>
+                                <p>Sessions can be rescheduled up to 24 hours in advance at no additional cost.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-ban text-red-600 mt-0.5 mr-3"></i>
+                            <div>
+                                <p class="font-medium text-gray-900">Cancellation</p>
+                                <p>Free cancellation up to 24 hours before session. 50% refund for cancellations within 24 hours.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking Summary -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-8">
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Booking Summary</h3>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Mentor</span>
+                                <span class="text-gray-900 font-medium">Dr. Sarah Chen</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Session Type</span>
+                                <span class="text-gray-900 font-medium">1-on-1 Video Call</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Date</span>
+                                <span class="text-gray-900 font-medium">June 18, 2025</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Time</span>
+                                <span class="text-gray-900 font-medium">2:00 PM - 3:00 PM PST</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Duration</span>
+                                <span class="text-gray-900 font-medium">60 minutes</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Focus Area</span>
+                                <span class="text-gray-900 font-medium">Advanced React</span>
+                            </div>
+                            <hr class="my-4">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Session Price</span>
+                                <span class="text-gray-900 font-medium">$85.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Platform Fee</span>
+                                <span class="text-gray-900 font-medium">$5.00</span>
+                            </div>
+                            <hr class="my-4">
+                            <div class="flex justify-between text-lg font-semibold">
+                                <span class="text-gray-900">Total</span>
+                                <span class="text-gray-900">$90.00</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors">
+                                Continue to Payment
+                            </button>
+                            <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 px-4 rounded-lg transition-colors">
+                                Save as Draft
+                            </button>
+                        </div>
+
+                        <!-- What's Included -->
+                        <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                            <h4 class="text-sm font-medium text-gray-900 mb-3">What's Included</h4>
+                            <ul class="text-xs text-gray-600 space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-600 mr-2"></i>
+                                    60-minute 1-on-1 video session
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-600 mr-2"></i>
+                                    Session recording (upon request)
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-600 mr-2"></i>
+                                    Follow-up resources and notes
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-600 mr-2"></i>
+                                    24/7 message support after session
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-600 mr-2"></i>
+                                    Free rescheduling (24hrs notice)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

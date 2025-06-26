@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Book with Dr. Sarah Chen - SkillBridge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <button class="mr-4 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h1 class="text-xl font-bold text-gray-900">SkillBridge</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-3">
+                        <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1708195886023-3ecb00ac7a49" alt="Profile">
+                        <span class="text-sm font-medium text-gray-700">Jessica Martinez</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Progress Steps -->
+        <div class="mb-8">
+            <div class="flex items-center justify-center space-x-4">
+                <div class="flex items-center">
+                    <div class="bg-green-600 text-white rounded-full h-8 w-8 flex items-center justify-center text-sm font-medium">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span class="ml-2 text-sm font-medium text-green-600">Select Time</span>
+                </div>
+                <div class="h-0.5 w-16 bg-green-600"></div>
+                <div class="flex items-center">
+                    <div class="bg-green-600 text-white rounded-full h-8 w-8 flex items-center justify-center text-sm font-medium">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span class="ml-2 text-sm font-medium text-green-600">Session Details</span>
+                </div>
+                <div class="h-0.5 w-16 bg-green-600"></div>
+                <div class="flex items-center">
+                    <div class="bg-blue-600 text-white rounded-full h-8 w-8 flex items-center justify-center text-sm font-medium">3</div>
+                    <span class="ml-2 text-sm font-medium text-blue-600">Payment</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-2">
+                <!-- Security Badge -->
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt text-green-600 text-lg mr-3"></i>
+                        <div>
+                            <p class="text-sm font-medium text-green-800">Secure Payment</p>
+                            <p class="text-sm text-green-700">Your payment information is encrypted and secure</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-6">Payment Method</h3>
+                    
+                    <div class="space-y-4 mb-6">
+                        <!-- Credit Card Option -->
+                        <label class="flex items-center p-4 border-2 border-blue-500 rounded-lg cursor-pointer bg-blue-50">
+                            <input type="radio" name="payment-method" value="card" class="text-blue-600" checked>
+                            <div class="ml-3 flex-1">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-medium text-gray-900">Credit or Debit Card</span>
+                                    <div class="flex space-x-2">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAzMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjIwIiByeD0iNCIgZmlsbD0iIzAwNTFBNSIvPgo8dGV4dCB4PSI1IiB5PSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjgiIGZpbGw9IndoaXRlIj5WSVNBPC90ZXh0Pgo8L3N2Zz4K" alt="Visa">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAzMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjIwIiByeD0iNCIgZmlsbD0iI0VCMDAxQiIvPgo8Y2lyY2xlIGN4PSIxMSIgY3k9IjEwIiByPSI2IiBmaWxsPSIjRkY1RjAwIiBmaWxsLW9wYWNpdHk9IjAuOCIvPgo8Y2lyY2xlIGN4PSIxOSIgY3k9IjEwIiByPSI2IiBmaWxsPSIjRkY1RjAwIiBmaWxsLW9wYWNpdHk9IjAuOCIvPgo8L3N2Zz4K" alt="Mastercard">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAzMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjIwIiByeD0iNCIgZmlsbD0iIzAwNjZDQyIvPgo8dGV4dCB4PSI0IiB5PSIxNCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjciIGZpbGw9IndoaXRlIj5BTUVYPC90ZXh0Pgo8L3N2Zz4K" alt="Amex">
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-600">Pay securely with your credit or debit card</p>
+                            </div>
+                        </label>
+
+                        <!-- PayPal Option -->
+                        <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                            <input type="radio" name="payment-method" value="paypal" class="text-blue-600">
+                            <div class="ml-3 flex-1">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-medium text-gray-900">PayPal</span>
+                                    <div class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-medium">PayPal</div>
+                                </div>
+                                <p class="text-sm text-gray-600">Pay with your PayPal account</p>
+                            </div>
+                        </label>
+
+                        <!-- Google Pay Option -->
+                        <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                            <input type="radio" name="payment-method" value="googlepay" class="text-blue-600">
+                            <div class="ml-3 flex-1">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-medium text-gray-900">Google Pay</span>
+                                    <div class="bg-gray-800 text-white px-3 py-1 rounded text-xs font-medium">G Pay</div>
+                                </div>
+                                <p class="text-sm text-gray-600">Pay with Google Pay</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- Card Details Form -->
+                    <div id="card-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Cardholder Name</label>
+                            <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Jessica Martinez">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Card Number</label>
+                            <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="1234 5678 9012 3456">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Expiry Date</label>
+                                <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="MM/YY">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">CVV</label>
+                                <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="123">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Billing Address -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-6">Billing Address</h3>
+                    
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" value="Jessica">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" value="Martinez">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Street Address</label>
+                            <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="123 Main Street">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">City</label>
+                                <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="San Francisco">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">State</label>
+                                <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option>California</option>
+                                    <option>New York</option>
+                                    <option>Texas</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">ZIP Code</label>
+                                <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="94105">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Terms and Privacy -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <div class="space-y-3">
+                        <label class="flex items-start">
+                            <input type="checkbox" class="text-blue-600 mt-1" checked>
+                            <span class="ml-3 text-sm text-gray-700">I agree to the <a href="#" class="text-blue-600 hover:underline">Terms of Service</a> and <a href="#" class="text-blue-600 hover:underline">Privacy Policy</a></span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="text-blue-600 mt-1">
+                            <span class="ml-3 text-sm text-gray-700">I would like to receive updates about similar mentors and sessions</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="text-blue-600 mt-1" checked>
+                            <span class="ml-3 text-sm text-gray-700">I understand the cancellation policy and refund terms</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-8">
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Order Summary</h3>
+                        
+                        <!-- Session Info -->
+                        <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                            <div class="flex items-center space-x-3 mb-3">
+                                <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1560250097-0b93528c311a" alt="Dr. Sarah Chen">
+                                <div>
+                                    <p class="font-medium text-gray-900">Dr. Sarah Chen</p>
+                                    <p class="text-sm text-gray-600">Advanced React Session</p>
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600 space-y-1">
+                                <p><strong>Date:</strong> June 18, 2025</p>
+                                <p><strong>Time:</strong> 2:00 PM - 3:00 PM PST</p>
+                                <p><strong>Duration:</strong> 60 minutes</p>
+                            </div>
+                        </div>
+
+                        <!-- Price Breakdown -->
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Session Price</span>
+                                <span class="text-gray-900">$85.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Platform Fee</span>
+                                <span class="text-gray-900">$5.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Processing Fee</span>
+                                <span class="text-gray-900">$2.50</span>
+                            </div>
+                            <hr>
+                            <div class="flex justify-between text-lg font-semibold">
+                                <span class="text-gray-900">Total</span>
+                                <span class="text-gray-900">$92.50</span>
+                            </div>
+                        </div>
+
+                        <!-- Payment Button -->
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors mb-4">
+                            <i class="fas fa-lock mr-2"></i>
+                            Complete Payment
+                        </button>
+
+                        <p class="text-xs text-gray-500 text-center">
+                            You will receive a confirmation email with session details after payment
+                        </p>
+
+                        <!-- Money Back Guarantee -->
+                        <div class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-shield-alt text-green-600 mr-2"></i>
+                                <span class="text-sm font-medium text-green-800">Money Back Guarantee</span>
+                            </div>
+                            <p class="text-xs text-green-700">If you're not satisfied with your session, we'll refund your money within 24 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
