@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Management - SkillBridge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-900">SkillBridge</h1>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-500 hover:text-gray-700">Dashboard</a>
+                    <a href="#" class="text-blue-600 font-medium">Sessions</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700">Courses</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700">Messages</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <button class="relative p-2 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-bell"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </button>
+                    <div class="flex items-center space-x-3">
+                        <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1560250097-0b93528c311a" alt="Profile">
+                        <span class="text-sm font-medium text-gray-700">Dr. Sarah Chen</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Page Header -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Session Management</h2>
+                <p class="text-gray-600">Manage your mentoring sessions and track your teaching progress</p>
+            </div>
+            <div class="mt-4 md:mt-0 flex space-x-3">
+                <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex items-center">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    Calendar View
+                </button>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center">
+                    <i class="fas fa-cog mr-2"></i>
+                    Availability Settings
+                </button>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                <div class="flex items-center">
+                    <div class="bg-blue-100 p-3 rounded-lg">
+                        <i class="fas fa-calendar-day text-blue-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-500">Today's Sessions</p>
+                        <p class="text-2xl font-bold text-gray-900">3</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                <div class="flex items-center">
+                    <div class="bg-green-100 p-3 rounded-lg">
+                        <i class="fas fa-clock text-green-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-500">Hours This Week</p>
+                        <p class="text-2xl font-bold text-gray-900">12</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                <div class="flex items-center">
+                    <div class="bg-purple-100 p-3 rounded-lg">
+                        <i class="fas fa-users text-purple-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-500">Active Mentees</p>
+                        <p class="text-2xl font-bold text-gray-900">38</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                <div class="flex items-center">
+                    <div class="bg-yellow-100 p-3 rounded-lg">
+                        <i class="fas fa-dollar-sign text-yellow-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-500">This Week's Earnings</p>
+                        <p class="text-2xl font-bold text-gray-900">$1,020</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sessions Today Section -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 mb-8">
+            <div class="p-6 border-b border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-900">Today's Sessions - June 18, 2025</h3>
+            </div>
+            <div class="p-6">
+                <!-- Current/Next Session -->
+                <div class="border border-green-200 bg-green-50 rounded-lg p-6 mb-4">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-1">
+                            <div class="bg-green-500 h-3 w-3 rounded-full animate-pulse"></div>
+                            <span class="text-sm font-medium text-green-700">Starting in 15 minutes</span>
+                        </div>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Next Session</span>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="flex items-start space-x-4 mb-4 md:mb-0">
+                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1657128344786-360c3f8e57e5" alt="Emily Rodriguez">
+                            <div>
+                                <h4 class="font-semibold text-gray-900">React Development Session</h4>
+                                <p class="text-gray-600">with Emily Rodriguez</p>
+                                <div class="flex items-center mt-2 space-x-4">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-clock mr-1"></i>
+                                        2:00 PM - 3:00 PM PST
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-tag mr-1"></i>
+                                        React Development
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button class="bg-white hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg border border-gray-300">
+                                <i class="fas fa-sticky-note mr-2"></i>Session Notes
+                            </button>
+                            <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium">
+                                <i class="fas fa-video mr-2"></i>Join Meeting
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-4 bg-white rounded-lg">
+                        <h5 class="font-medium text-gray-900 mb-2">Preparation Notes</h5>
+                        <p class="text-sm text-gray-600">Review Emily's React project, focus on useEffect patterns and component optimization. Prepared code examples for custom hooks.</p>
+                    </div>
+                </div>
+
+                <!-- Upcoming Session -->
+                <div class="border border-blue-200 bg-blue-50 rounded-lg p-6 mb-4">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="flex items-start space-x-4 mb-4 md:mb-0">
+                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1576558656222-ba66febe3dec" alt="Michael Thompson">
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Career Guidance Session</h4>
+                                <p class="text-gray-600">with Michael Thompson</p>
+                                <div class="flex items-center mt-2 space-x-4">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-clock mr-1"></i>
+                                        4:30 PM - 5:30 PM PST
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-tag mr-1"></i>
+                                        Career Development
+                                    </div>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Upcoming</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button class="bg-white hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg border border-gray-300">
+                                <i class="fas fa-message mr-2"></i>Message
+                            </button>
+                            <button class="bg-gray-200 text-gray-500 px-6 py-2 rounded-lg cursor-not-allowed">
+                                <i class="fas fa-video mr-2"></i>Not Yet Available
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evening Session -->
+                <div class="border border-gray-200 rounded-lg p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="flex items-start space-x-4 mb-4 md:mb-0">
+                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1584940121258-c2553b66a739" alt="Alex Kim">
+                            <div>
+                                <h4 class="font-semibold text-gray-900">JavaScript Fundamentals</h4>
+                                <p class="text-gray-600">with Alex Kim</p>
+                                <div class="flex items-center mt-2 space-x-4">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-clock mr-1"></i>
+                                        7:00 PM - 8:00 PM PST
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-tag mr-1"></i>
+                                        JavaScript
+                                    </div>
+                                    <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full">Scheduled</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button class="bg-white hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg border border-gray-300">
+                                <i class="fas fa-edit mr-2"></i>Edit Session
+                            </button>
+                            <button class="bg-gray-200 text-gray-500 px-6 py-2 rounded-lg cursor-not-allowed">
+                                <i class="fas fa-video mr-2"></i>Not Yet Available
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- All Sessions Section -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+            <div class="border-b border-gray-200">
+                <nav class="flex space-x-8 p-6">
+                    <button class="text-blue-600 border-b-2 border-blue-600 pb-2 font-medium">All Sessions</button>
+                    <button class="text-gray-500 hover:text-gray-700 pb-2">This Week</button>
+                    <button class="text-gray-500 hover:text-gray-700 pb-2">Completed</button>
+                    <button class="text-gray-500 hover:text-gray-700 pb-2">Cancelled</button>
+                </nav>
+            </div>
+
+            <div class="p-6">
+                <!-- Search and Filter -->
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                    <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                        <input type="text" placeholder="Search sessions..." class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <select class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option>All Topics</option>
+                            <option>React Development</option>
+                            <option>JavaScript</option>
+                            <option>Career Development</option>
+                        </select>
+                    </div>
+                    <div class="text-sm text-gray-500">
+                        Showing 42 sessions
+                    </div>
+                </div>
+
+                <!-- Sessions List -->
+                <div class="space-y-4">
+                    <!-- Completed Session -->
+                    <div class="border border-gray-200 rounded-lg p-6">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div class="flex items-start space-x-4 mb-4 md:mb-0">
+                                <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1708195886023-3ecb00ac7a49" alt="Lisa Martinez">
+                                <div>
+                                    <h4 class="font-medium text-gray-900">React Component Architecture</h4>
+                                    <p class="text-gray-600">with Lisa Martinez</p>
+                                    <div class="flex items-center mt-1 space-x-4">
+                                        <div class="flex items-center text-sm text-gray-500">
+                                            <i class="fas fa-calendar mr-1"></i>
+                                            June 17, 2025 • 10:00 AM
+                                        </div>
+                                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Completed</span>
+                                        <div class="flex text-yellow-400 text-xs">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex space-x-3">
+                                <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded text-sm">
+                                    <i class="fas fa-eye mr-1"></i>View Notes
+                                </button>
+                                <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm">
+                                    <i class="fas fa-redo mr-1"></i>Book Follow-up
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Another session -->
+                    <div class="border border-gray-200 rounded-lg p-6">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div class="flex items-start space-x-4 mb-4 md:mb-0">
+                                <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1657128344786-360c3f8e57e5" alt="Anna Chen">
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Node.js Backend Development</h4>
+                                    <p class="text-gray-600">with Anna Chen</p>
+                                    <div class="flex items-center mt-1 space-x-4">
+                                        <div class="flex items-center text-sm text-gray-500">
+                                            <i class="fas fa-calendar mr-1"></i>
+                                            June 16, 2025 • 3:00 PM
+                                        </div>
+                                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Completed</span>
+                                        <div class="flex text-yellow-400 text-xs">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex space-x-3">
+                                <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded text-sm">
+                                    <i class="fas fa-eye mr-1"></i>View Notes
+                                </button>
+                                <span class="bg-gray-100 text-gray-500 px-3 py-1 rounded text-sm">Earned: $85</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More -->
+                <div class="text-center mt-8">
+                    <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-2 rounded-lg">
+                        Load More Sessions
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
