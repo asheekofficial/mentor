@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillBridge Design System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-7xl mx-auto p-8">
+        <h1 class="text-4xl font-bold text-gray-900 mb-8">SkillBridge Design System</h1>
+        
+        <!-- Typography -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Typography</h2>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h1 class="text-4xl font-bold text-gray-900 mb-2">Heading 1 - 4xl Bold</h1>
+                <h2 class="text-3xl font-semibold text-gray-800 mb-2">Heading 2 - 3xl Semibold</h2>
+                <h3 class="text-2xl font-semibold text-gray-700 mb-2">Heading 3 - 2xl Semibold</h3>
+                <h4 class="text-xl font-medium text-gray-700 mb-2">Heading 4 - xl Medium</h4>
+                <p class="text-base text-gray-600 mb-2">Body Text - Base Regular</p>
+                <p class="text-sm text-gray-500">Small Text - SM Regular</p>
+            </div>
+        </section>
+
+        <!-- Color Palette -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Color Palette</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Primary Colors -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-medium mb-4">Primary</h3>
+                    <div class="space-y-2">
+                        <div class="bg-blue-600 h-12 rounded flex items-center justify-center text-white font-medium">Blue 600</div>
+                        <div class="bg-blue-500 h-10 rounded flex items-center justify-center text-white">Blue 500</div>
+                        <div class="bg-blue-100 h-10 rounded flex items-center justify-center text-blue-800">Blue 100</div>
+                    </div>
+                </div>
+                
+                <!-- Secondary Colors -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-medium mb-4">Secondary</h3>
+                    <div class="space-y-2">
+                        <div class="bg-indigo-600 h-12 rounded flex items-center justify-center text-white font-medium">Indigo 600</div>
+                        <div class="bg-indigo-500 h-10 rounded flex items-center justify-center text-white">Indigo 500</div>
+                        <div class="bg-indigo-100 h-10 rounded flex items-center justify-center text-indigo-800">Indigo 100</div>
+                    </div>
+                </div>
+
+                <!-- Success/Error -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-medium mb-4">Status</h3>
+                    <div class="space-y-2">
+                        <div class="bg-green-500 h-10 rounded flex items-center justify-center text-white">Success</div>
+                        <div class="bg-red-500 h-10 rounded flex items-center justify-center text-white">Error</div>
+                        <div class="bg-yellow-500 h-10 rounded flex items-center justify-center text-white">Warning</div>
+                    </div>
+                </div>
+
+                <!-- Neutrals -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-medium mb-4">Neutrals</h3>
+                    <div class="space-y-2">
+                        <div class="bg-gray-900 h-10 rounded flex items-center justify-center text-white">Gray 900</div>
+                        <div class="bg-gray-600 h-10 rounded flex items-center justify-center text-white">Gray 600</div>
+                        <div class="bg-gray-100 h-10 rounded flex items-center justify-center text-gray-800">Gray 100</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buttons -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Buttons</h2>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="space-y-4">
+                    <div class="flex flex-wrap gap-4">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors">Primary Button</button>
+                        <button class="bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 px-4 rounded-lg border border-gray-300 transition-colors">Secondary Button</button>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors">Ghost Button</button>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors">Large Button</button>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-1.5 px-3 rounded text-sm transition-colors">Small Button</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Elements -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Form Elements</h2>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Input Field</label>
+                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter text here">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Select Dropdown</label>
+                        <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option>Choose an option</option>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Textarea</label>
+                        <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" rows="3" placeholder="Enter your message"></textarea>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Cards</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Basic Card -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Basic Card</h3>
+                    <p class="text-gray-600">This is a basic card component with shadow and rounded corners.</p>
+                </div>
+
+                <!-- Feature Card -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-2 rounded-lg">
+                            <i class="fas fa-star text-blue-600"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 ml-3">Feature Card</h3>
+                    </div>
+                    <p class="text-gray-600">Card with icon and hover effect.</p>
+                </div>
+
+                <!-- Stat Card -->
+                <div class="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg shadow-sm p-6 text-white">
+                    <h3 class="text-2xl font-bold mb-1">$2,345</h3>
+                    <p class="text-blue-100">Total Earnings</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Badges & Tags -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Badges & Tags</h2>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="space-y-4">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded-full">Available</span>
+                        <span class="bg-red-100 text-red-800 text-sm font-medium px-2.5 py-0.5 rounded-full">Busy</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-2.5 py-0.5 rounded-full">Draft</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded-full">Published</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded-lg">JavaScript</span>
+                        <span class="bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded-lg">React</span>
+                        <span class="bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded-lg">Node.js</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacing System -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Spacing System</h2>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <div class="bg-blue-200 w-4 h-4 mr-4"></div>
+                        <span class="text-sm">4px - 1 unit</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-blue-200 w-6 h-6 mr-4"></div>
+                        <span class="text-sm">8px - 2 units</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-blue-200 w-8 h-8 mr-4"></div>
+                        <span class="text-sm">16px - 4 units</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-blue-200 w-12 h-12 mr-4"></div>
+                        <span class="text-sm">24px - 6 units</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-blue-200 w-16 h-16 mr-4"></div>
+                        <span class="text-sm">32px - 8 units</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Icons -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Icons (Font Awesome)</h2>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="grid grid-cols-6 md:grid-cols-12 gap-4 text-center">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-user text-2xl text-gray-600 mb-2"></i>
+                        <span class="text-xs">User</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-calendar text-2xl text-gray-600 mb-2"></i>
+                        <span class="text-xs">Calendar</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-star text-2xl text-gray-600 mb-2"></i>
+                        <span class="text-xs">Star</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-message text-2xl text-gray-600 mb-2"></i>
+                        <span class="text-xs">Message</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-book text-2xl text-gray-600 mb-2"></i>
+                        <span class="text-xs">Course</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-video text-2xl text-gray-600 mb-2"></i>
+                        <span class="text-xs">Video</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

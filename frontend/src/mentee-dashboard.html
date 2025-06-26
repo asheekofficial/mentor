@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentee Dashboard - SkillBridge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-900">SkillBridge</h1>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-blue-600 font-medium">Dashboard</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700">Browse Mentors</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700">My Sessions</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700">Courses</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700">Messages</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <button class="relative p-2 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-bell"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                    </button>
+                    <div class="flex items-center space-x-3">
+                        <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1708195886023-3ecb00ac7a49" alt="Profile">
+                        <span class="text-sm font-medium text-gray-700">Jessica Martinez</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Welcome Banner -->
+        <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg shadow-sm p-6 mb-8 text-white">
+            <h2 class="text-2xl font-bold mb-2">Welcome back, Jessica! 🚀</h2>
+            <p class="text-indigo-100">You have 2 upcoming sessions this week and 3 courses in progress</p>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                <div class="flex items-center">
+                    <div class="bg-green-100 p-3 rounded-lg">
+                        <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-500">Sessions Completed</p>
+                        <p class="text-2xl font-bold text-gray-900">18</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                <div class="flex items-center">
+                    <div class="bg-blue-100 p-3 rounded-lg">
+                        <i class="fas fa-clock text-blue-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-500">Hours Mentored</p>
+                        <p class="text-2xl font-bold text-gray-900">34</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                <div class="flex items-center">
+                    <div class="bg-purple-100 p-3 rounded-lg">
+                        <i class="fas fa-book text-purple-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-500">Courses Enrolled</p>
+                        <p class="text-2xl font-bold text-gray-900">5</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                <div class="flex items-center">
+                    <div class="bg-yellow-100 p-3 rounded-lg">
+                        <i class="fas fa-users text-yellow-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-500">Active Mentors</p>
+                        <p class="text-2xl font-bold text-gray-900">3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Upcoming Bookings -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-semibold text-gray-900">Upcoming Sessions</h3>
+                            <a href="#" class="text-blue-600 hover:text-blue-700 text-sm font-medium">View All</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                                <div class="flex items-center space-x-4">
+                                    <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1560250097-0b93528c311a" alt="Mentor">
+                                    <div>
+                                        <p class="font-medium text-gray-900">Dr. Sarah Chen</p>
+                                        <p class="text-sm text-gray-500">React Development Session</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm font-medium text-gray-900">Tomorrow, 2:00 PM</p>
+                                    <div class="flex space-x-2 mt-2">
+                                        <button class="bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1 rounded">Join</button>
+                                        <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-1 rounded">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                                <div class="flex items-center space-x-4">
+                                    <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1543132220-7bc04a0e790a" alt="Mentor">
+                                    <div>
+                                        <p class="font-medium text-gray-900">James Wilson</p>
+                                        <p class="text-sm text-gray-500">Career Strategy Session</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm font-medium text-gray-900">Friday, 4:00 PM</p>
+                                    <div class="flex space-x-2 mt-2">
+                                        <button class="bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1 rounded">Join</button>
+                                        <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs px-3 py-1 rounded">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enrolled Courses -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-semibold text-gray-900">My Courses</h3>
+                            <a href="#" class="text-blue-600 hover:text-blue-700 text-sm font-medium">Browse All Courses</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                <img class="w-full h-32 object-cover rounded-lg mb-4" src="https://images.unsplash.com/photo-1531482615713-2afd69097998" alt="Course">
+                                <h4 class="font-medium text-gray-900 mb-2">React for Beginners</h4>
+                                <p class="text-sm text-gray-500 mb-3">by Dr. Sarah Chen</p>
+                                <div class="mb-3">
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>Progress</span>
+                                        <span>65%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-blue-600 h-2 rounded-full" style="width: 65%"></div>
+                                    </div>
+                                </div>
+                                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm py-2 rounded-lg">Continue Learning</button>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                <img class="w-full h-32 object-cover rounded-lg mb-4" src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c" alt="Course">
+                                <h4 class="font-medium text-gray-900 mb-2">Career Development</h4>
+                                <p class="text-sm text-gray-500 mb-3">by James Wilson</p>
+                                <div class="mb-3">
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>Progress</span>
+                                        <span>30%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-blue-600 h-2 rounded-full" style="width: 30%"></div>
+                                    </div>
+                                </div>
+                                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm py-2 rounded-lg">Continue Learning</button>
+                            </div>
+
+                            <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                <img class="w-full h-32 object-cover rounded-lg mb-4" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf" alt="Course">
+                                <h4 class="font-medium text-gray-900 mb-2">Leadership Skills</h4>
+                                <p class="text-sm text-gray-500 mb-3">by Maria Rodriguez</p>
+                                <div class="mb-3">
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>Progress</span>
+                                        <span>80%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-blue-600 h-2 rounded-full" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm py-2 rounded-lg">Continue Learning</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="space-y-8">
+                <!-- Recommended Mentors -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-semibold text-gray-900">Recommended Mentors</h3>
+                            <a href="#" class="text-blue-600 hover:text-blue-700 text-sm font-medium">View All</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:shadow-sm transition-shadow">
+                                <div class="flex items-center space-x-3">
+                                    <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1584940121258-c2553b66a739" alt="Mentor">
+                                    <div>
+                                        <p class="font-medium text-gray-900">Alex Johnson</p>
+                                        <p class="text-sm text-gray-500">Full Stack Developer</p>
+                                        <div class="flex items-center mt-1">
+                                            <div class="flex text-yellow-400 text-xs">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="text-xs text-gray-500 ml-1">4.9 (23)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-sm font-medium text-gray-900">$75/hr</span>
+                                    <button class="block bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1 rounded mt-1">Book</button>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:shadow-sm transition-shadow">
+                                <div class="flex items-center space-x-3">
+                                    <img class="h-12 w-12 rounded-full" src="https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg" alt="Mentor">
+                                    <div>
+                                        <p class="font-medium text-gray-900">Lisa Chen</p>
+                                        <p class="text-sm text-gray-500">UX Designer</p>
+                                        <div class="flex items-center mt-1">
+                                            <div class="flex text-yellow-400 text-xs">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="text-xs text-gray-500 ml-1">4.8 (31)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-sm font-medium text-gray-900">$80/hr</span>
+                                    <button class="block bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1 rounded mt-1">Book</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Messages -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-semibold text-gray-900">Recent Messages</h3>
+                            <a href="#" class="text-blue-600 hover:text-blue-700 text-sm font-medium">View All</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1560250097-0b93528c311a" alt="Mentor">
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-gray-900">Dr. Sarah Chen</p>
+                                    <p class="text-sm text-gray-500 truncate">Great progress on your React project! Let's discuss the next steps...</p>
+                                    <p class="text-xs text-gray-400 mt-1">1 hour ago</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1543132220-7bc04a0e790a" alt="Mentor">
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-gray-900">James Wilson</p>
+                                    <p class="text-sm text-gray-500 truncate">I've prepared some career guidance materials for our next session...</p>
+                                    <p class="text-xs text-gray-400 mt-1">3 hours ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
