@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Availability - SkillBridge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-900">SkillBridge</h1>
+                </div>
+                <div class="text-sm text-gray-500">
+                    Step 2 of 5
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Progress Bar -->
+        <div class="mb-8">
+            <div class="flex items-center justify-between text-sm font-medium text-gray-500 mb-2">
+                <span>Availability Setup</span>
+                <span>40% Complete</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+                <div class="bg-blue-600 h-2 rounded-full transition-all duration-300" style="width: 40%"></div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Set Your Availability</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Configure when you're available for mentoring sessions. You can always update this later.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-2">
+                <!-- Timezone -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-6">Timezone Settings</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Your Timezone *</label>
+                            <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option>Pacific Standard Time (PST)</option>
+                                <option>Mountain Standard Time (MST)</option>
+                                <option>Central Standard Time (CST)</option>
+                                <option>Eastern Standard Time (EST)</option>
+                                <option>Greenwich Mean Time (GMT)</option>
+                                <option>Central European Time (CET)</option>
+                                <option>India Standard Time (IST)</option>
+                                <option>Japan Standard Time (JST)</option>
+                                <option>Other...</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Current Time</label>
+                            <div class="px-3 py-2 bg-gray-50 border border-gray-300 rounded-lg text-gray-700">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span id="current-time">2:30 PM PST</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weekly Schedule -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-lg font-semibold text-gray-900">Weekly Availability</h3>
+                        <button class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                            <i class="fas fa-copy mr-1"></i>Copy to all days
+                        </button>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Monday -->
+                        <div class="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg">
+                            <div class="w-20">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="text-blue-600" checked>
+                                    <span class="ml-2 font-medium text-gray-900">Monday</span>
+                                </label>
+                            </div>
+                            <div class="flex-1 grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs text-gray-500 mb-1">From</label>
+                                    <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                        <option>9:00 AM</option>
+                                        <option>10:00 AM</option>
+                                        <option>11:00 AM</option>
+                                        <option>12:00 PM</option>
+                                        <option>1:00 PM</option>
+                                        <option>2:00 PM</option>
+                                        <option>3:00 PM</option>
+                                        <option>4:00 PM</option>
+                                        <option>5:00 PM</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-gray-500 mb-1">To</label>
+                                    <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                        <option>1:00 PM</option>
+                                        <option>2:00 PM</option>
+                                        <option>3:00 PM</option>
+                                        <option>4:00 PM</option>
+                                        <option selected>5:00 PM</option>
+                                        <option>6:00 PM</option>
+                                        <option>7:00 PM</option>
+                                        <option>8:00 PM</option>
+                                        <option>9:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="text-green-600 hover:text-green-700">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <!-- Tuesday -->
+                        <div class="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg">
+                            <div class="w-20">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="text-blue-600" checked>
+                                    <span class="ml-2 font-medium text-gray-900">Tuesday</span>
+                                </label>
+                            </div>
+                            <div class="flex-1 grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs text-gray-500 mb-1">From</label>
+                                    <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                        <option selected>10:00 AM</option>
+                                        <option>11:00 AM</option>
+                                        <option>12:00 PM</option>
+                                        <option>1:00 PM</option>
+                                        <option>2:00 PM</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-gray-500 mb-1">To</label>
+                                    <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                        <option>2:00 PM</option>
+                                        <option>3:00 PM</option>
+                                        <option selected>4:00 PM</option>
+                                        <option>5:00 PM</option>
+                                        <option>6:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="text-green-600 hover:text-green-700">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <!-- Wednesday -->
+                        <div class="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg bg-gray-50">
+                            <div class="w-20">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="text-blue-600">
+                                    <span class="ml-2 font-medium text-gray-500">Wednesday</span>
+                                </label>
+                            </div>
+                            <div class="flex-1 text-gray-500 text-sm">
+                                Not available
+                            </div>
+                            <button class="text-gray-400">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <!-- Thursday -->
+                        <div class="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg">
+                            <div class="w-20">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="text-blue-600" checked>
+                                    <span class="ml-2 font-medium text-gray-900">Thursday</span>
+                                </label>
+                            </div>
+                            <div class="flex-1 grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs text-gray-500 mb-1">From</label>
+                                    <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                        <option>12:00 PM</option>
+                                        <option>1:00 PM</option>
+                                        <option selected>2:00 PM</option>
+                                        <option>3:00 PM</option>
+                                        <option>4:00 PM</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-gray-500 mb-1">To</label>
+                                    <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                        <option>4:00 PM</option>
+                                        <option>5:00 PM</option>
+                                        <option selected>6:00 PM</option>
+                                        <option>7:00 PM</option>
+                                        <option>8:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="text-green-600 hover:text-green-700">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <!-- Friday -->
+                        <div class="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg">
+                            <div class="w-20">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="text-blue-600" checked>
+                                    <span class="ml-2 font-medium text-gray-900">Friday</span>
+                                </label>
+                            </div>
+                            <div class="flex-1 grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs text-gray-500 mb-1">From</label>
+                                    <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                        <option selected>9:00 AM</option>
+                                        <option>10:00 AM</option>
+                                        <option>11:00 AM</option>
+                                        <option>12:00 PM</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-gray-500 mb-1">To</label>
+                                    <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                        <option>1:00 PM</option>
+                                        <option>2:00 PM</option>
+                                        <option selected>3:00 PM</option>
+                                        <option>4:00 PM</option>
+                                        <option>5:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="text-green-600 hover:text-green-700">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <!-- Saturday -->
+                        <div class="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg bg-gray-50">
+                            <div class="w-20">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="text-blue-600">
+                                    <span class="ml-2 font-medium text-gray-500">Saturday</span>
+                                </label>
+                            </div>
+                            <div class="flex-1 text-gray-500 text-sm">
+                                Not available
+                            </div>
+                            <button class="text-gray-400">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <!-- Sunday -->
+                        <div class="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg bg-gray-50">
+                            <div class="w-20">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="text-blue-600">
+                                    <span class="ml-2 font-medium text-gray-500">Sunday</span>
+                                </label>
+                            </div>
+                            <div class="flex-1 text-gray-500 text-sm">
+                                Not available
+                            </div>
+                            <button class="text-gray-400">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <div class="flex items-start">
+                            <i class="fas fa-info-circle text-blue-600 mt-0.5 mr-3"></i>
+                            <div>
+                                <h4 class="text-sm font-medium text-blue-800">Availability Tips</h4>
+                                <ul class="text-sm text-blue-700 mt-1 space-y-1">
+                                    <li>• Set consistent weekly hours to attract regular mentees</li>
+                                    <li>• You can block specific dates for holidays or vacations later</li>
+                                    <li>• Buffer time between sessions is automatically added</li>
+                                    <li>• Students can book up to 2 weeks in advance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Settings -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-6">Booking Settings</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Advance booking window</label>
+                                <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option>Same day booking allowed</option>
+                                    <option>24 hours advance required</option>
+                                    <option selected>48 hours advance required</option>
+                                    <option>1 week advance required</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Maximum booking window</label>
+                                <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option>1 week ahead</option>
+                                    <option selected>2 weeks ahead</option>
+                                    <option>1 month ahead</option>
+                                    <option>3 months ahead</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Buffer time between sessions</label>
+                                <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option>No buffer</option>
+                                    <option>15 minutes</option>
+                                    <option selected>30 minutes</option>
+                                    <option>60 minutes</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Daily session limit</label>
+                                <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option>No limit</option>
+                                    <option>1 session per day</option>
+                                    <option>2 sessions per day</option>
+                                    <option selected>3 sessions per day</option>
+                                    <option>5 sessions per day</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Automatic availability</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="text-blue-600" checked>
+                                    <span class="ml-3 text-sm text-gray-700">Automatically mark slots as available based on my weekly schedule</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="text-blue-600">
+                                    <span class="ml-3 text-sm text-gray-700">Send me email notifications for new bookings</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="text-blue-600" checked>
+                                    <span class="ml-3 text-sm text-gray-700">Send me calendar invites for confirmed sessions</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-8">
+                    <!-- Schedule Preview -->
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">This Week's Schedule</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Monday</span>
+                                <span class="text-sm font-medium text-green-600">9:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Tuesday</span>
+                                <span class="text-sm font-medium text-green-600">10:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Wednesday</span>
+                                <span class="text-sm text-gray-400">Not available</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Thursday</span>
+                                <span class="text-sm font-medium text-green-600">2:00 PM - 6:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Friday</span>
+                                <span class="text-sm font-medium text-green-600">9:00 AM - 3:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Weekend</span>
+                                <span class="text-sm text-gray-400">Not available</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 p-3 bg-green-50 rounded-lg">
+                            <div class="text-sm text-green-800">
+                                <p class="font-medium">Weekly Capacity</p>
+                                <p>20 hours available for mentoring</p>
+                                <p>~20 sessions possible</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calendar Integration -->
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Calendar Integration</h3>
+                        <p class="text-sm text-gray-600 mb-4">Connect your calendar to avoid double bookings</p>
+                        
+                        <div class="space-y-3">
+                            <button class="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-50">
+                                <i class="fab fa-google text-red-600 mr-2"></i>
+                                Google Calendar
+                            </button>
+                            <button class="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-50">
+                                <i class="fab fa-microsoft text-blue-600 mr-2"></i>
+                                Outlook Calendar
+                            </button>
+                            <button class="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-50">
+                                <i class="fab fa-apple text-gray-800 mr-2"></i>
+                                Apple Calendar
+                            </button>
+                        </div>
+                        
+                        <p class="text-xs text-gray-500 mt-3 text-center">
+                            Optional: We'll check for conflicts automatically
+                        </p>
+                    </div>
+
+                    <!-- Tips -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                        <h4 class="font-medium text-blue-900 mb-3">📅 Scheduling Tips</h4>
+                        <div class="space-y-2 text-sm text-blue-800">
+                            <p>• Start with fewer hours and increase based on demand</p>
+                            <p>• Peak times are usually evenings and weekends</p>
+                            <p>• Consider different time zones if mentoring globally</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
+            <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 px-6 rounded-lg">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Back to Profile
+            </button>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg">
+                Save & Continue
+                <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
