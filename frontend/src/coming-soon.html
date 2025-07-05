@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillBridge - Coming Soon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800 min-h-screen">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -top-10 -left-10 w-40 h-40 bg-white opacity-10 rounded-full animate-pulse"></div>
+        <div class="absolute top-1/4 right-10 w-20 h-20 bg-white opacity-5 rounded-full animate-bounce"></div>
+        <div class="absolute bottom-20 left-1/4 w-32 h-32 bg-white opacity-5 rounded-full animate-ping"></div>
+        <div class="absolute bottom-10 right-1/3 w-16 h-16 bg-white opacity-10 rounded-full animate-pulse"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="relative z-10 pt-6 pb-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center">
+                <h1 class="text-2xl font-bold text-white">SkillBridge</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="relative z-10 flex items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <!-- Coming Soon Badge -->
+            <div class="inline-flex items-center px-4 py-2 bg-white bg-opacity-20 rounded-full text-white text-sm font-medium mb-8 backdrop-blur-sm">
+                <i class="fas fa-rocket mr-2"></i>
+                Coming Soon
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                The Future of
+                <span class="bg-gradient-to-r from-yellow-400 to-pink-400 bg-clip-text text-transparent">
+                    Mentorship
+                </span>
+                is Here
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-xl md:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Connect with industry experts, accelerate your career, and unlock your potential through personalized 1-on-1 mentorship sessions.
+            </p>
+
+            <!-- Countdown Timer -->
+            <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-white border-opacity-20">
+                <h3 class="text-2xl font-semibold text-white mb-6">Launching In</h3>
+                <div class="grid grid-cols-4 gap-4 md:gap-8">
+                    <div class="text-center">
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-2">
+                            <div class="text-3xl md:text-4xl font-bold text-white" id="days">28</div>
+                        </div>
+                        <div class="text-blue-200 text-sm md:text-base">Days</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-2">
+                            <div class="text-3xl md:text-4xl font-bold text-white" id="hours">14</div>
+                        </div>
+                        <div class="text-blue-200 text-sm md:text-base">Hours</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-2">
+                            <div class="text-3xl md:text-4xl font-bold text-white" id="minutes">23</div>
+                        </div>
+                        <div class="text-blue-200 text-sm md:text-base">Minutes</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-2">
+                            <div class="text-3xl md:text-4xl font-bold text-white" id="seconds">42</div>
+                        </div>
+                        <div class="text-blue-200 text-sm md:text-base">Seconds</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email Signup -->
+            <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-white border-opacity-20">
+                <h3 class="text-2xl font-semibold text-white mb-4">Be the First to Know</h3>
+                <p class="text-blue-100 mb-6">Get early access and exclusive updates about our launch</p>
+                
+                <form class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email address"
+                        class="flex-1 px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 backdrop-blur-sm"
+                    >
+                    <button 
+                        type="submit"
+                        class="bg-gradient-to-r from-yellow-400 to-pink-400 hover:from-yellow-500 hover:to-pink-500 text-gray-900 font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
+                    >
+                        Notify Me
+                    </button>
+                </form>
+                
+                <p class="text-xs text-blue-200 mt-4">
+                    <i class="fas fa-lock mr-1"></i>
+                    We respect your privacy. Unsubscribe at any time.
+                </p>
+            </div>
+
+            <!-- Features Preview -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20">
+                    <div class="bg-gradient-to-r from-blue-400 to-purple-400 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-video text-white text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">1-on-1 Video Sessions</h4>
+                    <p class="text-blue-200 text-sm">High-quality video calls with screen sharing and recording capabilities</p>
+                </div>
+
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20">
+                    <div class="bg-gradient-to-r from-green-400 to-blue-400 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-white text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">Expert Mentors</h4>
+                    <p class="text-blue-200 text-sm">Connect with industry professionals from top companies worldwide</p>
+                </div>
+
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20">
+                    <div class="bg-gradient-to-r from-purple-400 to-pink-400 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-line text-white text-xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">Track Progress</h4>
+                    <p class="text-blue-200 text-sm">Monitor your learning journey with detailed analytics and insights</p>
+                </div>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-white border-opacity-20">
+                <h3 class="text-2xl font-semibold text-white mb-6">Join the Waitlist</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="text-3xl font-bold text-white mb-2">2,500+</div>
+                        <div class="text-blue-200">People Waiting</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-white mb-2">500+</div>
+                        <div class="text-blue-200">Expert Mentors Ready</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-white mb-2">50+</div>
+                        <div class="text-blue-200">Skill Categories</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Early Access Benefits -->
+            <div class="bg-gradient-to-r from-yellow-400 to-pink-400 rounded-2xl p-8 mb-12 text-gray-900">
+                <h3 class="text-2xl font-bold mb-6">Early Access Benefits</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                        <span class="font-medium">50% off first month</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                        <span class="font-medium">Priority mentor matching</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                        <span class="font-medium">Exclusive beta features</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                        <span class="font-medium">Free premium course access</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-white hover:text-yellow-400 transition-colors">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-yellow-400 transition-colors">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-yellow-400 transition-colors">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-yellow-400 transition-colors">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+            </div>
+
+            <!-- Contact -->
+            <p class="text-blue-200 text-sm">
+                Questions? Email us at 
+                <a href="mailto:hello@skillbridge.com" class="text-yellow-400 hover:underline">hello@skillbridge.com</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="relative z-10 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-blue-200 text-sm">
+                &copy; 2025 SkillBridge. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Countdown Timer -->
+    <script>
+        // Set the launch date (30 days from now)
+        const launchDate = new Date();
+        launchDate.setDate(launchDate.getDate() + 30);
+        launchDate.setHours(12, 0, 0, 0); // Set to noon
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = launchDate.getTime() - now;
+
+            // Calculate days, hours, minutes, seconds
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            // Update the display
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            // If countdown reaches zero
+            if (timeLeft < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+
+        // Email form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            
+            if (email) {
+                // Here you would typically send the email to your backend
+                alert('Thank you! We\'ll notify you when SkillBridge launches.');
+                this.querySelector('input[type="email"]').value = '';
+            }
+        });
+
+        // Add smooth scrolling and animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add entrance animations
+            const elements = document.querySelectorAll('.bg-white.bg-opacity-10');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    el.style.transition = 'all 0.6s ease';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
