@@ -396,5 +396,102 @@
             </button>
         </div>
     </div>
+
+    <script>
+        // Add experience functionality
+        document.getElementById('addExperience').addEventListener('click', function() {
+            const container = document.getElementById('experienceContainer');
+            const newExperience = createExperienceEntry();
+            container.appendChild(newExperience);
+            
+            // Add remove functionality to the new entry
+            addRemoveListener(newExperience);
+            addCurrentPositionListener(newExperience);
+        });
+
+        function createExperienceEntry() {
+            const div = document.createElement('div');
+            div.className = 'experience-entry border border-gray-200 rounded-lg p-6 relative';
+            div.innerHTML = `
+                <button type="button" class="remove-experience absolute top-4 right-4 text-gray-400 hover:text-red-500 text-sm">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Job Title *</label>
+                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="e.g., Senior Software Engineer">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Company *</label>
+                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="e.g., Google">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Start Date *</label>
+                        <input type="month" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">End Date</label>
+                        <input type="month" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent end-date">
+                    </div>
+                    <div class="flex items-end">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="current-position text-blue-600">
+                            <span class="ml-2 text-sm text-gray-700">Current Position</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Description (Optional)</label>
+                    <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" rows="3" placeholder="Describe your role, responsibilities, and achievements..."></textarea>
+                </div>
+            `;
+            return div;
+        }
+
+        function addRemoveListener(entry) {
+            const removeBtn = entry.querySelector('.remove-experience');
+            removeBtn.addEventListener('click', function() {
+                const container = document.getElementById('experienceContainer');
+                if (container.children.length > 1) {
+                    entry.remove();
+                }
+            });
+        }
+
+        function addCurrentPositionListener(entry) {
+            const currentCheckbox = entry.querySelector('.current-position');
+            const endDateInput = entry.querySelector('.end-date');
+            
+            currentCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    endDateInput.disabled = true;
+                    endDateInput.value = '';
+                    endDateInput.classList.add('bg-gray-100');
+                } else {
+                    endDateInput.disabled = false;
+                    endDateInput.classList.remove('bg-gray-100');
+                }
+            });
+        }
+
+        // Initialize existing experience entries
+        document.querySelectorAll('.experience-entry').forEach(entry => {
+            addRemoveListener(entry);
+            addCurrentPositionListener(entry);
+            
+            // Set initial state for current position
+            const currentCheckbox = entry.querySelector('.current-position');
+            const endDateInput = entry.querySelector('.end-date');
+            if (currentCheckbox.checked) {
+                endDateInput.disabled = true;
+                endDateInput.classList.add('bg-gray-100');
+            }
+        });
+    </script>
 </body>
 </html>
