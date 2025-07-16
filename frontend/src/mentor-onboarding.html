@@ -541,6 +541,36 @@
                 endDateInput.classList.add('bg-gray-100');
             }
         });
+
+        // Account status preview functionality
+        const statusRadios = document.querySelectorAll('input[name="account-status"]');
+        const statusBadge = document.getElementById('status-badge');
+        const previewBookBtn = document.getElementById('preview-book-btn');
+
+        statusRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'active') {
+                    statusBadge.textContent = 'Available';
+                    statusBadge.className = 'bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full';
+                    previewBookBtn.disabled = false;
+                    previewBookBtn.className = 'w-full bg-blue-600 text-white text-sm py-2 rounded-lg';
+                    previewBookBtn.textContent = 'Book Session';
+                } else {
+                    statusBadge.textContent = 'Inactive';
+                    statusBadge.className = 'bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full';
+                    previewBookBtn.disabled = true;
+                    previewBookBtn.className = 'w-full bg-gray-300 text-gray-500 text-sm py-2 rounded-lg cursor-not-allowed';
+                    previewBookBtn.textContent = 'Not Available';
+                }
+            });
+        });
+
+        // Initialize status preview
+        const activeRadio = document.querySelector('input[name="account-status"][value="active"]');
+        if (activeRadio && activeRadio.checked) {
+            statusBadge.textContent = 'Available';
+            statusBadge.className = 'bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full';
+        }
     </script>
 </body>
 </html>
