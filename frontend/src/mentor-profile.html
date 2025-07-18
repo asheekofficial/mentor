@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Sarah Chen - Mentor Profile - SkillBridge</title>
+    <title>Profile Settings - SkillBridge</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -13,22 +13,25 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <button class="mr-4 text-gray-500 hover:text-gray-700">
+                    <button class="mr-4 text-gray-500 hover:text-gray-700" onclick="window.location.href='mentor-dashboard.html'">
                         <i class="fas fa-arrow-left"></i>
                     </button>
                     <h1 class="text-xl font-bold text-gray-900">SkillBridge</h1>
                 </div>
                 <nav class="hidden md:flex space-x-8">
                     <a href="#" class="text-gray-500 hover:text-gray-700">Dashboard</a>
-                    <a href="#" class="text-blue-600 font-medium">Browse Mentors</a>
-                    <a href="#" class="text-gray-500 hover:text-gray-700">My Sessions</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700">Sessions</a>
                     <a href="#" class="text-gray-500 hover:text-gray-700">Courses</a>
                     <a href="#" class="text-gray-500 hover:text-gray-700">Messages</a>
                 </nav>
                 <div class="flex items-center space-x-4">
+                    <button class="relative p-2 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-bell"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </button>
                     <div class="flex items-center space-x-3">
-                        <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1708195886023-3ecb00ac7a49" alt="Profile">
-                        <span class="text-sm font-medium text-gray-700">Jessica Martinez</span>
+                        <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1560250097-0b93528c311a" alt="Profile">
+                        <span class="text-sm font-medium text-gray-700">Dr. Sarah Chen</span>
                     </div>
                 </div>
             </div>
@@ -36,252 +39,715 @@
     </header>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Main Content -->
-            <div class="lg:col-span-2">
-                <!-- Profile Header -->
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
-                    <div class="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6">
-                        <img class="h-24 w-24 rounded-full" src="https://images.unsplash.com/photo-1560250097-0b93528c311a" alt="Dr. Sarah Chen">
-                        <div class="flex-1">
-                            <div class="flex items-center space-x-3 mb-2">
-                                <h1 class="text-3xl font-bold text-gray-900">Dr. Sarah Chen</h1>
-                                <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">Available</span>
-                            </div>
-                            <p class="text-xl text-gray-600 mb-3">Senior React Developer & Tech Lead</p>
-                            <div class="flex items-center space-x-4 mb-4">
-                                <div class="flex items-center">
-                                    <div class="flex text-yellow-400 text-lg">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <span class="text-lg text-gray-600 ml-2">4.9 (47 reviews)</span>
-                                </div>
-                                <div class="text-gray-500">•</div>
-                                <div class="text-gray-600">142 sessions completed</div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">React</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">JavaScript</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Node.js</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">TypeScript</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Next.js</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Page Header -->
+        <div class="mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">Profile Settings</h2>
+            <p class="text-gray-600">Manage your mentor profile and account settings</p>
+        </div>
 
-                <!-- About Section -->
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">About</h2>
-                    <div class="prose text-gray-600">
-                        <p class="mb-4">I'm a passionate software engineer with over 8 years of experience in modern web development. Currently working as a Tech Lead at a Fortune 500 company, I specialize in React, JavaScript, and building scalable web applications.</p>
-                        
-                        <p class="mb-4">My expertise includes:</p>
-                        <ul class="list-disc list-inside mb-4 space-y-1">
-                            <li>Frontend development with React, TypeScript, and modern JavaScript</li>
-                            <li>Backend development with Node.js and Express</li>
-                            <li>Database design and optimization</li>
-                            <li>System architecture and scalability</li>
-                            <li>Team leadership and mentoring</li>
-                        </ul>
-
-                        <p>I love helping developers advance their careers and master new technologies. Whether you're a beginner looking to learn the fundamentals or an experienced developer wanting to level up, I'm here to guide you through your journey.</p>
-                    </div>
-                </div>
-
-                <!-- Experience -->
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-6">Experience</h2>
-                    <div class="space-y-6">
-                        <div class="flex space-x-4">
-                            <div class="bg-blue-100 p-3 rounded-lg">
-                                <i class="fas fa-building text-blue-600"></i>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="font-semibold text-gray-900">Senior Tech Lead</h3>
-                                <p class="text-gray-600">TechCorp Inc. • 2020 - Present</p>
-                                <p class="text-sm text-gray-500 mt-1">Leading a team of 8 developers, architecting scalable React applications serving 1M+ users</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex space-x-4">
-                            <div class="bg-green-100 p-3 rounded-lg">
-                                <i class="fas fa-code text-green-600"></i>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="font-semibold text-gray-900">Senior Frontend Developer</h3>
-                                <p class="text-gray-600">StartupXYZ • 2018 - 2020</p>
-                                <p class="text-sm text-gray-500 mt-1">Built the entire frontend architecture from scratch, implemented CI/CD pipelines</p>
-                            </div>
-                        </div>
-
-                        <div class="flex space-x-4">
-                            <div class="bg-purple-100 p-3 rounded-lg">
-                                <i class="fas fa-graduation-cap text-purple-600"></i>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="font-semibold text-gray-900">PhD in Computer Science</h3>
-                                <p class="text-gray-600">Stanford University • 2014 - 2018</p>
-                                <p class="text-sm text-gray-500 mt-1">Research focused on web technologies and user interface design</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Reviews -->
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-6">Reviews</h2>
-                    <div class="space-y-6">
-                        <div class="border-l-4 border-blue-500 pl-6">
-                            <div class="flex items-center mb-2">
-                                <img class="h-10 w-10 rounded-full mr-3" src="https://images.unsplash.com/photo-1657128344786-360c3f8e57e5" alt="Reviewer">
-                                <div>
-                                    <p class="font-medium text-gray-900">Emily Rodriguez</p>
-                                    <div class="flex text-yellow-400 text-sm">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-gray-600">"Excellent mentor! Sarah helped me understand React concepts clearly and provided practical examples. Her teaching style is very engaging and she's patient with questions. Highly recommended!"</p>
-                            <p class="text-sm text-gray-500 mt-2">2 days ago</p>
-                        </div>
-
-                        <div class="border-l-4 border-blue-500 pl-6">
-                            <div class="flex items-center mb-2">
-                                <img class="h-10 w-10 rounded-full mr-3" src="https://images.unsplash.com/photo-1576558656222-ba66febe3dec" alt="Reviewer">
-                                <div>
-                                    <p class="font-medium text-gray-900">Michael Thompson</p>
-                                    <div class="flex text-yellow-400 text-sm">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-gray-600">"Sarah's expertise in modern web development is outstanding. She helped me transition from jQuery to React and guided me through best practices. The session was very well structured."</p>
-                            <p class="text-sm text-gray-500 mt-2">1 week ago</p>
-                        </div>
-
-                        <div class="border-l-4 border-blue-500 pl-6">
-                            <div class="flex items-center mb-2">
-                                <img class="h-10 w-10 rounded-full mr-3" src="https://images.unsplash.com/photo-1584940121258-c2553b66a739" alt="Reviewer">
-                                <div>
-                                    <p class="font-medium text-gray-900">Alex Kim</p>
-                                    <div class="flex text-yellow-400 text-sm">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-gray-600">"Great mentor for JavaScript fundamentals. Sarah explained complex concepts in simple terms and provided excellent resources for further learning. Will definitely book more sessions!"</p>
-                            <p class="text-sm text-gray-500 mt-2">2 weeks ago</p>
-                        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Sidebar Navigation -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-8">
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                        <nav class="space-y-2">
+                            <button class="nav-item w-full text-left px-3 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg border-l-4 border-blue-600" data-tab="personal">
+                                <i class="fas fa-user mr-3"></i>Personal Information
+                            </button>
+                            <button class="nav-item w-full text-left px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors" data-tab="specializations">
+                                <i class="fas fa-star mr-3"></i>Specializations
+                            </button>
+                            <button class="nav-item w-full text-left px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors" data-tab="schedule">
+                                <i class="fas fa-calendar mr-3"></i>Schedule
+                            </button>
+                            <button class="nav-item w-full text-left px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors" data-tab="pricing">
+                                <i class="fas fa-dollar-sign mr-3"></i>Pricing
+                            </button>
+                        </nav>
                     </div>
                 </div>
             </div>
 
-            <!-- Booking Sidebar -->
-            <div class="lg:col-span-1">
-                <div class="sticky top-8">
-                    <!-- Pricing Card -->
+            <!-- Main Content -->
+            <div class="lg:col-span-3">
+                <!-- Personal Information Tab -->
+                <div id="personal-tab" class="tab-content">
+                    <!-- Basic Information -->
                     <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-                        <div class="text-center mb-6">
-                            <div class="text-4xl font-bold text-gray-900 mb-2">$85</div>
-                            <p class="text-gray-600">per hour session</p>
-                        </div>
-
-                        <div class="space-y-4 mb-6">
-                            <div class="flex items-center space-x-3">
-                                <i class="fas fa-video text-blue-600"></i>
-                                <span class="text-gray-700">1-on-1 video sessions</span>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Basic Information</h3>
+                        
+                        <!-- Profile Picture -->
+                        <div class="flex items-center space-x-6 mb-8">
+                            <div class="relative">
+                                <img class="h-24 w-24 rounded-full object-cover border-4 border-gray-200" src="https://images.unsplash.com/photo-1560250097-0b93528c311a" alt="Profile picture">
+                                <button class="absolute -bottom-2 -right-2 bg-blue-600 text-white rounded-full p-2 hover:bg-blue-700">
+                                    <i class="fas fa-camera text-sm"></i>
+                                </button>
                             </div>
-                            <div class="flex items-center space-x-3">
-                                <i class="fas fa-code text-blue-600"></i>
-                                <span class="text-gray-700">Code review & debugging</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <i class="fas fa-book text-blue-600"></i>
-                                <span class="text-gray-700">Learning resources included</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <i class="fas fa-message text-blue-600"></i>
-                                <span class="text-gray-700">Follow-up support</span>
+                            <div>
+                                <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg mb-2">
+                                    <i class="fas fa-upload mr-2"></i>Change Photo
+                                </button>
+                                <p class="text-sm text-gray-500">JPG, PNG or GIF. Max size 5MB.</p>
                             </div>
                         </div>
 
-                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg mb-3 transition-colors">
-                            Book a Session
-                        </button>
-                        <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 px-4 rounded-lg transition-colors">
-                            Send Message
-                        </button>
+                        <!-- Form Fields -->
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" value="Sarah">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" value="Chen">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg bg-gray-50 text-gray-500 cursor-not-allowed" value="sarah.chen@example.com" readonly>
+                                <p class="text-sm text-gray-500 mt-1">Email address cannot be changed. Contact support if needed.</p>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Current Role/Title</label>
+                                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" value="Senior React Developer">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Company</label>
+                                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" value="TechCorp Inc.">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Years of Experience</label>
+                                <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option>1-2 years</option>
+                                    <option>3-5 years</option>
+                                    <option>6-10 years</option>
+                                    <option selected>10+ years</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Professional Bio</label>
+                                <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" rows="4">I'm a passionate software engineer with over 8 years of experience in modern web development. Currently working as a Tech Lead at a Fortune 500 company, I specialize in React, JavaScript, and building scalable web applications. I love helping developers advance their careers and master new technologies.</textarea>
+                            </div>
+
+                            <div class="flex justify-end">
+                                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+                                    Save Changes
+                                </button>
+                            </div>
+                        </form>
                     </div>
 
-                    <!-- Availability -->
+                    <!-- Work Experience -->
                     <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Availability This Week</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-700">Monday</span>
-                                <span class="text-sm text-green-600 bg-green-100 px-2 py-1 rounded">9:00 AM - 5:00 PM</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-700">Tuesday</span>
-                                <span class="text-sm text-green-600 bg-green-100 px-2 py-1 rounded">10:00 AM - 4:00 PM</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-700">Wednesday</span>
-                                <span class="text-sm text-red-600 bg-red-100 px-2 py-1 rounded">Unavailable</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-700">Thursday</span>
-                                <span class="text-sm text-green-600 bg-green-100 px-2 py-1 rounded">2:00 PM - 6:00 PM</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-700">Friday</span>
-                                <span class="text-sm text-green-600 bg-green-100 px-2 py-1 rounded">9:00 AM - 3:00 PM</span>
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-lg font-semibold text-gray-900">Work Experience</h3>
+                            <button type="button" id="addExperience" class="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center">
+                                <i class="fas fa-plus mr-1"></i>Add Experience
+                            </button>
+                        </div>
+                        
+                        <div id="experienceContainer" class="space-y-6">
+                            <!-- Experience Entry 1 -->
+                            <div class="experience-entry border border-gray-200 rounded-lg p-6 relative">
+                                <button type="button" class="remove-experience absolute top-4 right-4 text-gray-400 hover:text-red-500 text-sm">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Job Title</label>
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" value="Senior React Developer">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Company</label>
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" value="TechCorp Inc.">
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Start Date</label>
+                                        <input type="month" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" value="2020-01">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">End Date</label>
+                                        <input type="month" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent end-date bg-gray-100" disabled>
+                                    </div>
+                                    <div class="flex items-end">
+                                        <label class="flex items-center">
+                                            <input type="checkbox" class="current-position text-blue-600" checked>
+                                            <span class="ml-2 text-sm text-gray-700">Current Position</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                                    <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" rows="3">Leading a team of 8 developers, architecting scalable React applications serving 1M+ users. Responsible for technical strategy and mentoring junior developers.</textarea>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Quick Stats -->
+                    <!-- Account Status -->
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Account Status</h3>
+                        
+                        <div class="space-y-4">
+                            <label class="flex items-start p-4 border-2 border-green-200 bg-green-50 rounded-lg cursor-pointer hover:bg-green-100 transition-colors">
+                                <input type="radio" name="account-status" value="active" class="text-green-600 mt-1" checked>
+                                <div class="ml-3 flex-1">
+                                    <div class="flex items-center">
+                                        <div class="font-medium text-gray-900">Active</div>
+                                        <span class="ml-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Current</span>
+                                    </div>
+                                    <div class="text-sm text-gray-600 mt-1">
+                                        Your profile is visible to mentees and they can book sessions with you.
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="flex items-start p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                <input type="radio" name="account-status" value="inactive" class="text-blue-600 mt-1">
+                                <div class="ml-3 flex-1">
+                                    <div class="font-medium text-gray-900">Inactive</div>
+                                    <div class="text-sm text-gray-600 mt-1">
+                                        Your profile is hidden from mentees and you won't receive booking requests.
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Change Password Section -->
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Change Password</h3>
+                        
+                        <form class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Current Password</label>
+                                <input type="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">New Password</label>
+                                <input type="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Confirm New Password</label>
+                                <input type="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+
+                            <div class="flex justify-end">
+                                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+                                    Update Password
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Delete Account Section -->
                     <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Stats</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between">
-                                <span class="text-gray-600">Response Time</span>
-                                <span class="text-gray-900 font-medium">< 2 hours</span>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Delete Account</h3>
+                        <p class="text-sm text-gray-600 mb-4">Once you delete your account, all your data will be permanently removed. This action cannot be undone.</p>
+                        
+                        <button class="text-red-600 hover:text-red-700 text-sm font-medium">
+                            Delete Account
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Specializations Tab -->
+                <div id="specializations-tab" class="tab-content hidden">
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Your Specializations</h3>
+                        <p class="text-gray-600 mb-6">Select the areas where you can provide mentorship. You can choose multiple specializations.</p>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-medium text-gray-900 mb-3">Programming & Development</h4>
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                        <input type="checkbox" name="skills" value="javascript" class="text-blue-600" checked>
+                                        <span class="ml-3 text-sm">JavaScript</span>
+                                    </label>
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                        <input type="checkbox" name="skills" value="react" class="text-blue-600" checked>
+                                        <span class="ml-3 text-sm">React</span>
+                                    </label>
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                        <input type="checkbox" name="skills" value="nodejs" class="text-blue-600" checked>
+                                        <span class="ml-3 text-sm">Node.js</span>
+                                    </label>
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                        <input type="checkbox" name="skills" value="python" class="text-blue-600">
+                                        <span class="ml-3 text-sm">Python</span>
+                                    </label>
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                        <input type="checkbox" name="skills" value="typescript" class="text-blue-600" checked>
+                                        <span class="ml-3 text-sm">TypeScript</span>
+                                    </label>
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                        <input type="checkbox" name="skills" value="nextjs" class="text-blue-600">
+                                        <span class="ml-3 text-sm">Next.js</span>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-600">Languages</span>
-                                <span class="text-gray-900 font-medium">English, Spanish</span>
+
+                            <div>
+                                <h4 class="font-medium text-gray-900 mb-3">Design & User Experience</h4>
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                        <input type="checkbox" name="skills" value="ux-design" class="text-blue-600">
+                                        <span class="ml-3 text-sm">UX Design</span>
+                                    </label>
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                        <input type="checkbox" name="skills" value="ui-design" class="text-blue-600">
+                                        <span class="ml-3 text-sm">UI Design</span>
+                                    </label>
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                        <input type="checkbox" name="skills" value="figma" class="text-blue-600">
+                                        <span class="ml-3 text-sm">Figma</span>
+                                    </label>
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                        <input type="checkbox" name="skills" value="prototyping" class="text-blue-600">
+                                        <span class="ml-3 text-sm">Prototyping</span>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-600">Timezone</span>
-                                <span class="text-gray-900 font-medium">PST (UTC-8)</span>
+
+                            <div>
+                                <h4 class="font-medium text-gray-900 mb-3">Career & Business</h4>
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                        <input type="checkbox" name="skills" value="career-coaching" class="text-blue-600">
+                                        <span class="ml-3 text-sm">Career Coaching</span>
+                                    </label>
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                        <input type="checkbox" name="skills" value="leadership" class="text-blue-600" checked>
+                                        <span class="ml-3 text-sm">Leadership</span>
+                                    </label>
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                        <input type="checkbox" name="skills" value="product-management" class="text-blue-600">
+                                        <span class="ml-3 text-sm">Product Management</span>
+                                    </label>
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                                        <input type="checkbox" name="skills" value="entrepreneurship" class="text-blue-600">
+                                        <span class="ml-3 text-sm">Entrepreneurship</span>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-600">Member Since</span>
-                                <span class="text-gray-900 font-medium">2022</span>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Other Skills</label>
+                                <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Add custom skills separated by commas">
                             </div>
+                        </div>
+
+                        <div class="flex justify-end mt-8">
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+                                Save Changes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Schedule Tab -->
+                <div id="schedule-tab" class="tab-content hidden">
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Weekly Availability</h3>
+                        
+                        <div class="space-y-4">
+                            <!-- Monday -->
+                            <div class="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg">
+                                <div class="w-20">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="text-blue-600" checked>
+                                        <span class="ml-2 font-medium text-gray-900">Monday</span>
+                                    </label>
+                                </div>
+                                <div class="flex-1 grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs text-gray-500 mb-1">From</label>
+                                        <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                            <option selected>9:00 AM</option>
+                                            <option>10:00 AM</option>
+                                            <option>11:00 AM</option>
+                                            <option>12:00 PM</option>
+                                            <option>1:00 PM</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs text-gray-500 mb-1">To</label>
+                                        <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                            <option>3:00 PM</option>
+                                            <option>4:00 PM</option>
+                                            <option selected>5:00 PM</option>
+                                            <option>6:00 PM</option>
+                                            <option>7:00 PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tuesday -->
+                            <div class="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg">
+                                <div class="w-20">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="text-blue-600" checked>
+                                        <span class="ml-2 font-medium text-gray-900">Tuesday</span>
+                                    </label>
+                                </div>
+                                <div class="flex-1 grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs text-gray-500 mb-1">From</label>
+                                        <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                            <option>9:00 AM</option>
+                                            <option selected>10:00 AM</option>
+                                            <option>11:00 AM</option>
+                                            <option>12:00 PM</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs text-gray-500 mb-1">To</label>
+                                        <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                            <option>2:00 PM</option>
+                                            <option>3:00 PM</option>
+                                            <option selected>4:00 PM</option>
+                                            <option>5:00 PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Wednesday -->
+                            <div class="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg bg-gray-50">
+                                <div class="w-20">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="text-blue-600">
+                                        <span class="ml-2 font-medium text-gray-500">Wednesday</span>
+                                    </label>
+                                </div>
+                                <div class="flex-1 text-gray-500 text-sm">
+                                    Not available
+                                </div>
+                            </div>
+
+                            <!-- Thursday -->
+                            <div class="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg">
+                                <div class="w-20">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="text-blue-600" checked>
+                                        <span class="ml-2 font-medium text-gray-900">Thursday</span>
+                                    </label>
+                                </div>
+                                <div class="flex-1 grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs text-gray-500 mb-1">From</label>
+                                        <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                            <option>12:00 PM</option>
+                                            <option>1:00 PM</option>
+                                            <option selected>2:00 PM</option>
+                                            <option>3:00 PM</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs text-gray-500 mb-1">To</label>
+                                        <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                            <option>4:00 PM</option>
+                                            <option>5:00 PM</option>
+                                            <option selected>6:00 PM</option>
+                                            <option>7:00 PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Friday -->
+                            <div class="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg">
+                                <div class="w-20">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="text-blue-600" checked>
+                                        <span class="ml-2 font-medium text-gray-900">Friday</span>
+                                    </label>
+                                </div>
+                                <div class="flex-1 grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs text-gray-500 mb-1">From</label>
+                                        <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                            <option selected>9:00 AM</option>
+                                            <option>10:00 AM</option>
+                                            <option>11:00 AM</option>
+                                            <option>12:00 PM</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs text-gray-500 mb-1">To</label>
+                                        <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm">
+                                            <option>1:00 PM</option>
+                                            <option>2:00 PM</option>
+                                            <option selected>3:00 PM</option>
+                                            <option>4:00 PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Settings -->
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Booking Settings</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Advance booking window</label>
+                                    <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option>Same day booking allowed</option>
+                                        <option>24 hours advance required</option>
+                                        <option selected>48 hours advance required</option>
+                                        <option>1 week advance required</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Buffer time between sessions</label>
+                                    <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option>No buffer</option>
+                                        <option>15 minutes</option>
+                                        <option selected>30 minutes</option>
+                                        <option>60 minutes</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Daily session limit</label>
+                                <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option>No limit</option>
+                                    <option>1 session per day</option>
+                                    <option>2 sessions per day</option>
+                                    <option selected>3 sessions per day</option>
+                                    <option>5 sessions per day</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end mt-8">
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+                                Save Changes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Tab -->
+                <div id="pricing-tab" class="tab-content hidden">
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Pricing Settings</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Hourly Rate (USD)</label>
+                                    <div class="relative">
+                                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <span class="text-gray-500 text-lg">$</span>
+                                        </div>
+                                        <input type="number" class="w-full pl-8 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" value="85" min="25" max="500">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Session Duration</label>
+                                    <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option>45 minutes</option>
+                                        <option selected>60 minutes</option>
+                                        <option>90 minutes</option>
+                                        <option>120 minutes</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="p-4 bg-blue-50 rounded-lg">
+                                <div class="flex items-start">
+                                    <i class="fas fa-info-circle text-blue-600 mt-0.5 mr-3"></i>
+                                    <div>
+                                        <h4 class="text-sm font-medium text-blue-800">Pricing Information</h4>
+                                        <ul class="text-sm text-blue-700 mt-1 space-y-1">
+                                            <li>• You can adjust your rates anytime based on demand</li>
+                                            <li>• SkillBridge takes a 10% platform fee from each session</li>
+                                            <li>• You'll earn $76.50 per $85 session after platform fees</li>
+                                            <li>• Consider market rates for your expertise level</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end mt-8">
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+                                Save Changes
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // Tab functionality
+        const navItems = document.querySelectorAll('.nav-item');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Remove active class from all nav items
+                navItems.forEach(nav => {
+                    nav.classList.remove('text-blue-600', 'bg-blue-50', 'border-l-4', 'border-blue-600');
+                    nav.classList.add('text-gray-600', 'hover:text-gray-900', 'hover:bg-gray-50');
+                });
+                
+                // Add active class to clicked nav item
+                this.classList.remove('text-gray-600', 'hover:text-gray-900', 'hover:bg-gray-50');
+                this.classList.add('text-blue-600', 'bg-blue-50', 'border-l-4', 'border-blue-600');
+                
+                // Hide all tab contents
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show selected tab content
+                document.getElementById(tabId + '-tab').classList.remove('hidden');
+            });
+        });
+
+        // Add experience functionality
+        document.getElementById('addExperience').addEventListener('click', function() {
+            const container = document.getElementById('experienceContainer');
+            const newExperience = createExperienceEntry();
+            container.appendChild(newExperience);
+            
+            // Add remove functionality to the new entry
+            addRemoveListener(newExperience);
+            addCurrentPositionListener(newExperience);
+        });
+
+        function createExperienceEntry() {
+            const div = document.createElement('div');
+            div.className = 'experience-entry border border-gray-200 rounded-lg p-6 relative';
+            div.innerHTML = `
+                <button type="button" class="remove-experience absolute top-4 right-4 text-gray-400 hover:text-red-500 text-sm">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Job Title</label>
+                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Company</label>
+                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Start Date</label>
+                        <input type="month" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">End Date</label>
+                        <input type="month" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent end-date">
+                    </div>
+                    <div class="flex items-end">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="current-position text-blue-600">
+                            <span class="ml-2 text-sm text-gray-700">Current Position</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                    <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" rows="3"></textarea>
+                </div>
+            `;
+            return div;
+        }
+
+        function addRemoveListener(entry) {
+            const removeBtn = entry.querySelector('.remove-experience');
+            removeBtn.addEventListener('click', function() {
+                const container = document.getElementById('experienceContainer');
+                if (container.children.length > 1) {
+                    entry.remove();
+                }
+            });
+        }
+
+        function addCurrentPositionListener(entry) {
+            const currentCheckbox = entry.querySelector('.current-position');
+            const endDateInput = entry.querySelector('.end-date');
+            
+            currentCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    endDateInput.disabled = true;
+                    endDateInput.value = '';
+                    endDateInput.classList.add('bg-gray-100');
+                } else {
+                    endDateInput.disabled = false;
+                    endDateInput.classList.remove('bg-gray-100');
+                }
+            });
+        }
+
+        // Initialize existing experience entries
+        document.querySelectorAll('.experience-entry').forEach(entry => {
+            addRemoveListener(entry);
+            addCurrentPositionListener(entry);
+        });
+
+        // Form submission handlers
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show success message
+                const button = this.querySelector('button[type="submit"]');
+                const originalText = button.textContent;
+                button.textContent = 'Saved!';
+                button.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                button.classList.add('bg-green-600');
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('bg-green-600');
+                    button.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                }, 2000);
+            });
+        });
+
+        // Delete account confirmation
+        document.querySelector('button[class*="text-red-600"]').addEventListener('click', function() {
+            if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+                if (confirm('This will permanently delete all your data, sessions, and progress. Are you absolutely sure?')) {
+                    alert('Account deletion requested. You will receive a confirmation email shortly.');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
