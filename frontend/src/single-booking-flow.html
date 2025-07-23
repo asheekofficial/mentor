@@ -460,25 +460,50 @@
             window.history.back();
         }
 
+        // Countdown Timer
+        let timeLeft = 15 * 60; // 15 minutes in seconds
+        
+        function updateCountdown() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            
+            document.getElementById('countdownTimer').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft <= 0) {
+                // Timer expired
+                document.getElementById('countdownTimer').textContent = '00:00';
+                document.getElementById('countdownTimer').parentElement.classList.remove('bg-orange-50', 'border-orange-200');
+                document.getElementById('countdownTimer').parentElement.classList.add('bg-red-50', 'border-red-200');
+                document.getElementById('countdownTimer').classList.remove('text-orange-700');
+                document.getElementById('countdownTimer').classList.add('text-red-700');
+                document.querySelector('.fas.fa-clock').classList.remove('text-orange-500');
+                document.querySelector('.fas.fa-clock').classList.add('text-red-500');
+                
+                // Show expiration message
+                alert('Session booking time has expired. Please refresh the page to start again.');
+                return;
+            }
+            
+            // Change color when less than 2 minutes remain
+            if (timeLeft <= 120) {
+                document.getElementById('countdownTimer').parentElement.classList.remove('bg-orange-50', 'border-orange-200');
+                document.getElementById('countdownTimer').parentElement.classList.add('bg-red-50', 'border-red-200');
+                document.getElementById('countdownTimer').classList.remove('text-orange-700');
+                document.getElementById('countdownTimer').classList.add('text-red-700');
+                document.querySelector('.fas.fa-clock').classList.remove('text-orange-500');
+                document.querySelector('.fas.fa-clock').classList.add('text-red-500');
+            }
+            
+            timeLeft--;
+        }
+
         // Initialize
         initCalendar();
-        updateCurrentTime();
+        updateCountdown();
         
-        // Update time every second
-        setInterval(updateCurrentTime, 1000);
-        
-        // Function to update current time
-        function updateCurrentTime() {
-            const now = new Date();
-            const options = {
-                hour: 'numeric',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: true,
-                timeZoneName: 'short'
-            };
-            document.getElementById('currentTime').textContent = now.toLocaleTimeString('en-US', options);
-        }
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
