@@ -472,10 +472,70 @@
         }
 
         function processPayment() {
+            // Show loading state
+            showButtonLoader('payButton', 'Processing...');
+            
             // Simulate payment processing
-            closePaymentModal();
-            // In real app, this would process payment and redirect on success
-            window.location.href = 'booking-success.html';
+            setTimeout(() => {
+                hideButtonLoader('payButton', 'Pay $150.00');
+                closePaymentModal();
+                // In real app, this would process payment and redirect on success
+                window.location.href = 'booking-success.html';
+            }, 3000); // 3 second delay to simulate processing
+        }
+
+        function openPaymentModal() {
+            if (selectedDate && selectedTime) {
+                // Show loading state on confirm button
+                showButtonLoader('confirmBooking', 'Opening Payment...');
+                
+                // Simulate loading delay
+                setTimeout(() => {
+                    hideButtonLoader('confirmBooking', 'Confirm Booking & Pay $150');
+                    
+                    const date = new Date(selectedDate + 'T00:00:00');
+                    const dateTimeStr = date.toLocaleDateString('en-US', {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric'
+                    }) + ' at ' + selectedTime;
+                    document.getElementById('paymentDateTime').textContent = dateTimeStr;
+                    document.getElementById('paymentModal').classList.add('active');
+                }, 1000);
+            }
+        }
+
+        // Button loader functions
+        function showButtonLoader(buttonId, loadingText) {
+            const button = document.getElementById(buttonId);
+            const btnText = button.querySelector('.btn-text');
+            
+            // Add loading class
+            button.classList.add('btn-loading');
+            button.disabled = true;
+            
+            // Add loader and update text
+            if (btnText) {
+                btnText.innerHTML = '<div class="loader"></div>' + loadingText;
+            } else {
+                button.innerHTML = '<div class="loader"></div>' + loadingText;
+            }
+        }
+
+        function hideButtonLoader(buttonId, originalText) {
+            const button = document.getElementById(buttonId);
+            const btnText = button.querySelector('.btn-text');
+            
+            // Remove loading class
+            button.classList.remove('btn-loading');
+            button.disabled = false;
+            
+            // Restore original text
+            if (btnText) {
+                btnText.innerHTML = originalText;
+            } else {
+                button.innerHTML = originalText;
+            }
         }
 
         function goBack() {
