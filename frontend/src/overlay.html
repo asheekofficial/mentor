@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation - SkillBridge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .loader-large {
+            border: 3px solid #e5e7eb;
+            border-top: 3px solid #3b82f6;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            animation: spin 1s linear infinite;
+        }
+        .loader-small {
+            border: 2px solid #ffffff;
+            border-top: 2px solid #3b82f6;
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .overlay {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .scale-in {
+            animation: scaleIn 0.3s ease-in-out;
+        }
+        @keyframes scaleIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-black bg-opacity-50 font-sans">
+    <!-- Full Page Overlay -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 overlay flex items-center justify-center z-50 fade-in">
+        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full mx-4 scale-in">
+            <!-- Payment Confirmation Content -->
+            <div id="paymentConfirmationContent" class="p-8">
+                <div class="text-center">
+                    <!-- Loading Icon -->
+                    <div class="mb-6">
+                        <div class="w-20 h-20 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <div class="loader-large"></div>
+                        </div>
+                        <h2 class="text-xl font-semibold text-gray-900 mb-2">Confirming Payment</h2>
+                        <p class="text-gray-600 text-sm mb-8">Please wait while we validate your payment with our secure payment processor...</p>
+                    </div>
+                    
+                    <!-- Payment Summary -->
+                    <div class="bg-gray-50 rounded-lg p-4 mb-8">
+                        <div class="flex justify-between items-center">
+                            <div class="text-left">
+                                <p class="font-medium text-gray-900" id="mentorName">Session with Dr. Sarah Chen</p>
+                                <p class="text-sm text-gray-600" id="sessionDateTime">Jan 15, 2025 at 2:00 PM</p>
+                            </div>
+                            <span class="font-semibold text-lg text-gray-900" id="sessionAmount">$150.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Progress Steps -->
+                    <div class="space-y-4 text-left mb-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-900">Payment Submitted</p>
+                                <p class="text-xs text-gray-500">Your payment has been successfully processed</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4" id="bankValidationStep">
+                            <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <div class="loader-small"></div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-900">Bank Validation</p>
+                                <p class="text-xs text-gray-500">Validating payment with your bank...</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4" id="bookingConfirmationStep">
+                            <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-calendar text-gray-500 text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-500">Booking Confirmation</p>
+                                <p class="text-xs text-gray-400">Creating your session booking...</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4" id="emailNotificationStep">
+                            <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-gray-500 text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-500">Email Confirmation</p>
+                                <p class="text-xs text-gray-400">Sending confirmation details...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Status Message -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-info-circle text-blue-500 mt-0.5"></i>
+                            <div class="text-left">
+                                <p class="text-sm font-medium text-blue-800">Processing Payment</p>
+                                <p class="text-xs text-blue-600 mt-1">This usually takes 10-30 seconds. Please don't close this window until the process is complete.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success State (Hidden by default) -->
+            <div id="paymentSuccessContent" class="p-8 text-center hidden">
+                <div class="mb-6">
+                    <div class="w-20 h-20 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-check text-green-500 text-3xl"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">Payment Confirmed!</h2>
+                    <p class="text-gray-600 text-sm mb-6">Your session has been successfully booked.</p>
+                </div>
+
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                    <div class="flex items-center justify-center space-x-2">
+                        <i class="fas fa-calendar-check text-green-600"></i>
+                        <p class="text-sm font-medium text-green-800">Booking Reference: #SB-2025-001234</p>
+                    </div>
+                </div>
+
+                <button onclick="redirectToSuccess()" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                    View Booking Details
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize overlay with session data
+        function initializeOverlay(sessionData) {
+            if (sessionData) {
+                if (sessionData.mentorName) {
+                    document.getElementById('mentorName').textContent = `Session with ${sessionData.mentorName}`;
+                }
+                if (sessionData.dateTime) {
+                    document.getElementById('sessionDateTime').textContent = sessionData.dateTime;
+                }
+                if (sessionData.amount) {
+                    document.getElementById('sessionAmount').textContent = sessionData.amount;
+                }
+            }
+            
+            // Start the validation animation
+            startValidationProcess();
+        }
+
+        // Simulate validation process (for demo purposes)
+        function startValidationProcess() {
+            // After 3 seconds, complete bank validation
+            setTimeout(() => {
+                completeBankValidation();
+            }, 3000);
+            
+            // After 5 seconds, start booking confirmation
+            setTimeout(() => {
+                startBookingConfirmation();
+            }, 5000);
+            
+            // After 7 seconds, start email notification
+            setTimeout(() => {
+                startEmailNotification();
+            }, 7000);
+            
+            // After 9 seconds, show success (for demo - in real app, webhook will trigger this)
+            setTimeout(() => {
+                showPaymentSuccess();
+            }, 9000);
+        }
+
+        function completeBankValidation() {
+            const step = document.getElementById('bankValidationStep');
+            const icon = step.querySelector('.w-8.h-8');
+            const title = step.querySelector('.text-sm.font-medium');
+            const subtitle = step.querySelector('.text-xs');
+            
+            // Remove loader
+            const loader = icon.querySelector('.loader-small');
+            if (loader) loader.remove();
+            
+            // Update to success state
+            icon.classList.remove('bg-blue-500');
+            icon.classList.add('bg-green-500');
+            icon.innerHTML = '<i class="fas fa-check text-white text-sm"></i>';
+            
+            subtitle.textContent = 'Payment validated successfully';
+        }
+
+        function startBookingConfirmation() {
+            const step = document.getElementById('bookingConfirmationStep');
+            const icon = step.querySelector('.w-8.h-8');
+            const title = step.querySelector('.text-sm.font-medium');
+            const subtitle = step.querySelector('.text-xs');
+            
+            // Update to active state
+            icon.classList.remove('bg-gray-300');
+            icon.classList.add('bg-blue-500');
+            icon.innerHTML = '<div class="loader-small"></div>';
+            
+            title.classList.remove('text-gray-500');
+            title.classList.add('text-gray-900');
+            subtitle.classList.remove('text-gray-400');
+            subtitle.classList.add('text-gray-500');
+            subtitle.textContent = 'Setting up your session...';
+            
+            // Complete after 2 seconds
+            setTimeout(() => {
+                // Remove loader
+                const loader = icon.querySelector('.loader-small');
+                if (loader) loader.remove();
+                
+                // Update to success state
+                icon.classList.remove('bg-blue-500');
+                icon.classList.add('bg-green-500');
+                icon.innerHTML = '<i class="fas fa-check text-white text-sm"></i>';
+                
+                subtitle.textContent = 'Session booked successfully';
+            }, 2000);
+        }
+
+        function startEmailNotification() {
+            const step = document.getElementById('emailNotificationStep');
+            const icon = step.querySelector('.w-8.h-8');
+            const title = step.querySelector('.text-sm.font-medium');
+            const subtitle = step.querySelector('.text-xs');
+            
+            // Update to active state
+            icon.classList.remove('bg-gray-300');
+            icon.classList.add('bg-blue-500');
+            icon.innerHTML = '<div class="loader-small"></div>';
+            
+            title.classList.remove('text-gray-500');
+            title.classList.add('text-gray-900');
+            subtitle.classList.remove('text-gray-400');
+            subtitle.classList.add('text-gray-500');
+            subtitle.textContent = 'Sending confirmation email...';
+            
+            // Complete after 2 seconds
+            setTimeout(() => {
+                // Remove loader
+                const loader = icon.querySelector('.loader-small');
+                if (loader) loader.remove();
+                
+                // Update to success state
+                icon.classList.remove('bg-blue-500');
+                icon.classList.add('bg-green-500');
+                icon.innerHTML = '<i class="fas fa-check text-white text-sm"></i>';
+                
+                subtitle.textContent = 'Confirmation email sent';
+            }, 2000);
+        }
+
+        // Function to be called when webhook confirms everything is complete
+        function onWebhookConfirmation() {
+            showPaymentSuccess();
+        }
+
+        function showPaymentSuccess() {
+            // Hide confirmation content
+            document.getElementById('paymentConfirmationContent').classList.add('hidden');
+            
+            // Show success content
+            document.getElementById('paymentSuccessContent').classList.remove('hidden');
+        }
+
+        function redirectToSuccess() {
+            window.location.href = 'booking-success.html';
+        }
+
+        // Function to close overlay (if needed)
+        function closeOverlay() {
+            document.body.style.overflow = 'auto'; // Restore scrolling
+            window.parent.postMessage('closeOverlay', '*'); // Communicate with parent window
+        }
+
+        // Prevent body scrolling when overlay is active
+        document.body.style.overflow = 'hidden';
+
+        // Initialize with default data (can be overridden by parent window)
+        window.addEventListener('load', function() {
+            // Check if session data was passed via URL parameters or postMessage
+            const urlParams = new URLSearchParams(window.location.search);
+            const sessionData = {
+                mentorName: urlParams.get('mentorName') || 'Dr. Sarah Chen',
+                dateTime: urlParams.get('dateTime') || 'Jan 15, 2025 at 2:00 PM',
+                amount: urlParams.get('amount') || '$150.00'
+            };
+            
+            initializeOverlay(sessionData);
+        });
+
+        // Listen for messages from parent window
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'initOverlay') {
+                initializeOverlay(event.data.sessionData);
+            } else if (event.data.type === 'webhookConfirmation') {
+                onWebhookConfirmation();
+            }
+        });
+    </script>
+</body>
+</html>
