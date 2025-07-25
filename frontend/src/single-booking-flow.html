@@ -538,7 +538,107 @@
             }
         }
 
+        function processPayment() {
+            // Show loading state on payment button
+            showButtonLoader('payButton', 'Processing...');
+            
+            // Simulate payment processing with Stripe
+            setTimeout(() => {
+                // Hide payment button loader
+                hideButtonLoader('payButton', 'Pay $150.00');
+                
+                // Switch to confirmation state (unmount form, show validation)
+                showPaymentConfirmation();
+                
+                // Simulate webhook delay (in real app, this would be triggered by webhook)
+                setTimeout(() => {
+                    // When webhook confirms payment, redirect to success
+                    window.location.href = 'booking-success.html';
+                }, 5000); // 5 second webhook simulation
+                
+            }, 2000); // 2 second payment processing simulation
+        }
+
+        function showPaymentConfirmation() {
+            // Hide the payment form state
+            document.getElementById('paymentFormState').classList.add('hidden');
+            
+            // Show the confirmation state
+            document.getElementById('paymentConfirmationState').classList.remove('hidden');
+            
+            // Update the confirmation datetime to match payment datetime
+            const paymentDateTime = document.getElementById('paymentDateTime').textContent;
+            document.getElementById('confirmationDateTime').textContent = paymentDateTime;
+            
+            // Animate the validation step after a short delay
+            setTimeout(() => {
+                animateValidationSteps();
+            }, 1000);
+        }
+
+        function animateValidationSteps() {
+            // After 3 seconds, show bank validation as complete and move to booking confirmation
+            setTimeout(() => {
+                // Mark bank validation as complete
+                const bankStep = document.querySelectorAll('#paymentConfirmationState .flex.items-center')[1];
+                const bankIcon = bankStep.querySelector('.w-6.h-6');
+                const bankLoader = bankIcon.querySelector('.loader-small');
+                
+                if (bankLoader) {
+                    bankLoader.remove();
+                    bankIcon.classList.remove('bg-blue-500');
+                    bankIcon.classList.add('bg-green-500');
+                    bankIcon.innerHTML = '<i class="fas fa-check text-white text-xs"></i>';
+                }
+                
+                // Activate booking confirmation step
+                const bookingStep = document.querySelectorAll('#paymentConfirmationState .flex.items-center')[2];
+                const bookingIcon = bookingStep.querySelector('.w-6.h-6');
+                const bookingText = bookingStep.querySelector('span');
+                
+                bookingIcon.classList.remove('bg-gray-300');
+                bookingIcon.classList.add('bg-blue-500');
+                bookingIcon.innerHTML = '<div class="loader-small"></div>';
+                bookingText.classList.remove('text-gray-500');
+                bookingText.classList.add('text-gray-700');
+                bookingText.textContent = 'Creating booking confirmation...';
+                
+            }, 3000);
+        }
+
+        // Function to be called when webhook confirms payment (for real implementation)
+        function onWebhookConfirmation() {
+            // Mark all steps as complete
+            const steps = document.querySelectorAll('#paymentConfirmationState .flex.items-center');
+            steps.forEach((step, index) => {
+                const icon = step.querySelector('.w-6.h-6');
+                const loader = icon.querySelector('.loader-small');
+                if (loader) loader.remove();
+                
+                icon.classList.remove('bg-blue-500', 'bg-gray-300');
+                icon.classList.add('bg-green-500');
+                icon.innerHTML = '<i class="fas fa-check text-white text-xs"></i>';
+                
+                const text = step.querySelector('span');
+                text.classList.remove('text-gray-500');
+                text.classList.add('text-gray-700');
+            });
+            
+            // Update the last step text
+            steps[2].querySelector('span').textContent = 'Booking confirmed successfully!';
+            
+            // Redirect after a short delay
+            setTimeout(() => {
+                window.location.href = 'booking-success.html';
+            }, 1500);
+        }
+
         function closePaymentModal() {
+            // Reset modal to payment form state
+            document.getElementById('paymentFormState').classList.remove('hidden');
+            document.getElementById('paymentConfirmationState').classList.add('hidden');
+            
+            // Close modal
             document.getElementById('paymentModal').classList.remove('active');
         }
 
