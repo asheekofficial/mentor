@@ -242,7 +242,8 @@
     <!-- Stripe Payment Modal -->
     <div id="paymentModal" class="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50">
         <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4">
-            <div class="p-6">
+            <!-- Payment Form State -->
+            <div id="paymentFormState" class="p-6">
                 <div class="flex items-center justify-between mb-4">
                     <h3 class="text-lg font-semibold text-gray-900">Complete Payment</h3>
                     <button onclick="closePaymentModal()" class="text-gray-400 hover:text-gray-600">
@@ -280,6 +281,60 @@
                     <button id="payButton" onclick="processPayment()" class="flex-1 bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
                         <span class="btn-text">Pay $150.00</span>
                     </button>
+                </div>
+            </div>
+
+            <!-- Payment Confirmation State (Hidden by default) -->
+            <div id="paymentConfirmationState" class="p-6 hidden">
+                <div class="text-center">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <div class="loader-large"></div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Confirming Payment</h3>
+                        <p class="text-gray-600 text-sm mb-6">Please wait while we validate your payment with our secure payment processor...</p>
+                    </div>
+                    
+                    <!-- Payment Summary (repeated for confirmation state) -->
+                    <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="font-medium">Session with Dr. Sarah Chen</p>
+                                <p class="text-sm text-gray-600" id="confirmationDateTime">Jan 15, 2025 at 2:00 PM</p>
+                            </div>
+                            <span class="font-semibold text-lg">$150.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Progress Steps -->
+                    <div class="space-y-3 text-left">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-sm text-gray-700">Payment submitted successfully</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <div class="loader-small"></div>
+                            </div>
+                            <span class="text-sm text-gray-700">Validating payment with bank...</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-calendar text-gray-500 text-xs"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">Booking confirmation</span>
+                        </div>
+                    </div>
+
+                    <!-- Note -->
+                    <div class="mt-6 p-3 bg-blue-50 rounded-lg">
+                        <p class="text-xs text-blue-700">
+                            <i class="fas fa-info-circle mr-1"></i>
+                            This usually takes 10-30 seconds. Please don't close this window.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
