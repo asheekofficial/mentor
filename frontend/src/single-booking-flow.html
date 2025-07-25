@@ -642,6 +642,31 @@
             document.getElementById('paymentModal').classList.remove('active');
         }
 
+        // Button loader helper functions
+        function showButtonLoader(buttonId, loadingText) {
+            const button = document.getElementById(buttonId);
+            const btnText = button.querySelector('.btn-text');
+            
+            button.classList.add('btn-loading');
+            button.disabled = true;
+            
+            if (btnText) {
+                btnText.innerHTML = `<div class="loader"></div>${loadingText}`;
+            }
+        }
+
+        function hideButtonLoader(buttonId, originalText) {
+            const button = document.getElementById(buttonId);
+            const btnText = button.querySelector('.btn-text');
+            
+            button.classList.remove('btn-loading');
+            button.disabled = false;
+            
+            if (btnText) {
+                btnText.textContent = originalText;
+            }
+        }
+
         function goBack() {
             window.history.back();
         }
